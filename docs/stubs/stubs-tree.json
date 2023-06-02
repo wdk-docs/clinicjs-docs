@@ -1,0 +1,60 @@
+{
+  "title": "Stubs",
+  "links": [
+    {
+      "title": "Team",
+      "links": [
+        {
+          "title": "Alan",
+          "entry": "./team/alan.md",
+          "links": null
+        },
+        {
+          "title": "Conor",
+          "entry": "./team/conor.md",
+          "links": null
+        },
+        {
+          "title": "David",
+          "entry": "./team/david.md",
+          "links": null
+        },
+        {
+          "title": "James",
+          "entry": "./team/james.md",
+          "links": null
+        },
+        {
+          "title": "Mathias",
+          "entry": "./team/mathias.md",
+          "links": null
+        },
+        {
+          "title": "Matteo",
+          "entry": "./team/matteo.md",
+          "links": null
+        },
+        {
+          "title": "Renee",
+          "entry": "./team/renee.md",
+          "links": null
+        }
+      ]
+    },
+    {
+      "title": "Testimonial",
+      "links": [
+        {
+          "title": "Bubbleprof",
+          "entry": "./testimonial/bubbleprof.md",
+          "links": null
+        },
+        {
+          "title": "Clinic",
+          "entry": "./testimonial/clinic.md",
+          "links": null
+        }
+      ]
+    }
+  ]
+}

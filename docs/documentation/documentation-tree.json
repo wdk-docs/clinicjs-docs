@@ -1,0 +1,201 @@
+{
+  "title": "Documentation",
+  "entry": "./index.md",
+  "links": [
+    {
+      "title": "Bubbleprof",
+      "entry": "./bubbleprof/index.md",
+      "links": [
+        {
+          "title": "01 Setup",
+          "entry": "./bubbleprof/01-setup.md",
+          "links": null
+        },
+        {
+          "title": "02 Getting Ready",
+          "entry": "./bubbleprof/02-getting-ready.md",
+          "links": null
+        },
+        {
+          "title": "03 First Analysis",
+          "entry": "./bubbleprof/03-first-analysis.md",
+          "links": null
+        },
+        {
+          "title": "04 Bubbles",
+          "entry": "./bubbleprof/04-bubbles.md",
+          "links": null
+        },
+        {
+          "title": "05 Sidebar",
+          "entry": "./bubbleprof/05-sidebar.md",
+          "links": null
+        },
+        {
+          "title": "06 Finding The First Bottleneck",
+          "entry": "./bubbleprof/06-finding-the-first-bottleneck.md",
+          "links": null
+        },
+        {
+          "title": "07 Improving Our Latency",
+          "entry": "./bubbleprof/07-improving-our-latency.md",
+          "links": null
+        },
+        {
+          "title": "08 Parallel Queries",
+          "entry": "./bubbleprof/08-parallel-queries.md",
+          "links": null
+        },
+        {
+          "title": "09 Caching The Results",
+          "entry": "./bubbleprof/09-caching-the-results.md",
+          "links": null
+        }
+      ]
+    },
+    {
+      "title": "Cli",
+      "entry": "./cli/index.md",
+      "links": [
+        {
+          "title": "01 Simulating Load",
+          "entry": "./cli/01-simulating-load.md",
+          "links": null
+        },
+        {
+          "title": "02 Controlling The Output",
+          "entry": "./cli/02-controlling-the-output.md",
+          "links": null
+        },
+        {
+          "title": "03 Managing Samples",
+          "entry": "./cli/03-managing-samples.md",
+          "links": null
+        },
+        {
+          "title": "04 Reference",
+          "entry": "./cli/04-reference.md",
+          "links": null
+        }
+      ]
+    },
+    {
+      "title": "Doctor",
+      "entry": "./doctor/index.md",
+      "links": [
+        {
+          "title": "01 Setup",
+          "entry": "./doctor/01-setup.md",
+          "links": null
+        },
+        {
+          "title": "02 Getting Ready",
+          "entry": "./doctor/02-getting-ready.md",
+          "links": null
+        },
+        {
+          "title": "03 First Analysis",
+          "entry": "./doctor/03-first-analysis.md",
+          "links": null
+        },
+        {
+          "title": "04 Reading A Profile",
+          "entry": "./doctor/04-reading-a-profile.md",
+          "links": null
+        },
+        {
+          "title": "05 Fixing Event Loop Problem",
+          "entry": "./doctor/05-fixing-event-loop-problem.md",
+          "links": null
+        },
+        {
+          "title": "06 Fixing Io Problem",
+          "entry": "./doctor/06-fixing-io-problem.md",
+          "links": null
+        }
+      ]
+    },
+    {
+      "title": "Flame",
+      "entry": "./flame/index.md",
+      "links": [
+        {
+          "title": "01 Setup",
+          "entry": "./flame/01-setup.md",
+          "links": null
+        },
+        {
+          "title": "02 Getting Ready",
+          "entry": "./flame/02-getting-ready.md",
+          "links": null
+        },
+        {
+          "title": "03 First Analysis",
+          "entry": "./flame/03-first-analysis.md",
+          "links": null
+        },
+        {
+          "title": "04 Flamegraphs",
+          "entry": "./flame/04-flamegraphs.md",
+          "links": null
+        },
+        {
+          "title": "05 Controls",
+          "entry": "./flame/05-controls.md",
+          "links": null
+        },
+        {
+          "title": "06 Optimizing A Hot Function",
+          "entry": "./flame/06-optimizing-a-hot-function.md",
+          "links": null
+        },
+        {
+          "title": "07 Reducing The Graph Size",
+          "entry": "./flame/07-reducing-the-graph-size.md",
+          "links": null
+        },
+        {
+          "title": "08 Advanced Analysis",
+          "entry": "./flame/08-advanced-analysis.md",
+          "links": null
+        },
+        {
+          "title": "09 Advanced Controls",
+          "entry": "./flame/09-advanced-controls.md",
+          "links": null
+        }
+      ]
+    },
+    {
+      "title": "Heapprofiler",
+      "entry": "./heapprofiler/index.md",
+      "links": [
+        {
+          "title": "01 Setup",
+          "entry": "./heapprofiler/01-setup.md",
+          "links": null
+        },
+        {
+          "title": "02 Getting Ready",
+          "entry": "./heapprofiler/02-getting-ready.md",
+          "links": null
+        },
+        {
+          "title": "03 First Analysis",
+          "entry": "./heapprofiler/03-first-analysis.md",
+          "links": null
+        },
+        {
+          "title": "04 Flamegraphs",
+          "entry": "./heapprofiler/04-flamegraphs.md",
+          "links": null
+        },
+        {
+          "title": "05 Controls",
+          "entry": "./heapprofiler/05-controls.md",
+          "links": null
+        }
+      ]
+    }
+  ]
+}

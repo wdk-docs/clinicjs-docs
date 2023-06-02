@@ -1,0 +1,47 @@
+{
+  "title": "Blog",
+  "links": [
+    {
+      "title": "All The Latest Coverage And News On Clinic Js",
+      "entry": "./all-the-latest-coverage-and-news-on-clinic-js.md",
+      "links": null
+    },
+    {
+      "title": "Clinic Doctor Just Got More Advanced With Tensorflow Js",
+      "entry": "./clinic-doctor-just-got-more-advanced-with-tensorflow-js.md",
+      "links": null
+    },
+    {
+      "title": "Images",
+      "links": [
+        {
+          "title": "2018",
+          "links": [
+            {
+              "title": "07",
+              "links": []
+            },
+            {
+              "title": "08",
+              "links": []
+            }
+          ]
+        },
+        {
+          "title": "2020",
+          "links": [
+            {
+              "title": "02",
+              "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Introducing Bubbleprof",
+      "entry": "./introducing-bubbleprof.md",
+      "links": null
+    }
+  ]
+}
