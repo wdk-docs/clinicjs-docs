@@ -1,5 +1,5 @@
 ---
-title: 'First analysis'
+title: '首先分析'
 priority: 3
 
 # SEO
@@ -10,65 +10,53 @@ metaData:
     - Documentation
 ---
 
-# First analysis
+#   首先分析
 
-We're now ready to profile one of the example applications. For the first
-example, we will use `slow-event-loop`. First, let's confirm that it is ready and
-working by running `node slow-event-loop` from inside the `examples` directory.
-Once the process seems to be running we can visit <http://localhost:3000/> in a browser to check.
+现在我们准备分析其中一个示例应用程序。
+对于第一个例子，我们将使用 `slow-event-loop`。
+首先，让我们通过在`examples”目录中运行`node slow-event-loop`来确认它已经准备好并正在工作。
+一旦进程似乎正在运行，我们可以在浏览器中访问<http://localhost:3000/>进行检查。
 
-We should see some basic output in the browser, like `{}`. Ctrl-C in the
-command line to close the `slow-event-loop` server.
+我们应该在浏览器中看到一些基本的输出，比如`{}`。
+在命令行中按`Ctrl-C`关闭`slow-event-loop`服务器。
 
-This is a server, so we need to apply load. Profiling a server handling
-just one request doesn't give us much data or indication of how it performs
-when handling many requests. We recommend the benchmarking
-tool [Autocannon](https://www.npmjs.com/package/autocannon).
+这是一个服务器，所以我们需要加载。
+分析一个只处理一个请求的服务器并不能给我们提供很多数据，也不能说明它在处理多个请求时是如何执行的。
+我们推荐使用基准测试工具[Autocannon](https://www.npmjs.com/package/autocannon)。
 
-We will execute `autocannon` in the example application directories when
-we call the `clinic` executable, so let's install it globally, with the
-following command:
+当我们调用 `clinic` 可执行文件时，我们将在示例应用程序目录中执行 `autocannon`，所以让我们使用以下命令全局安装它:
 
 ```
 npm install -g autocannon
 ```
 
-To load-test the server, we want to run it with Doctor, and point
-`autocannon` at it as soon as it starts listening on a port. This will
-bombard the server with requests, as soon as it is ready to handle them
-and Doctor is ready to collect data.
+为了对服务器进行负载测试，我们希望使用Doctor运行它，并在它开始侦听端口时将`autocannon`指向它。
+一旦服务器准备好处理请求并且Doctor准备好收集数据，服务器就会被请求轰炸。
 
-Let's do all that with this single command, which automatically assigns
-the correct ports:
+让我们用这个命令来完成所有这些，它会自动分配正确的端口:
 
 ```
 clinic doctor --on-port 'autocannon localhost:$PORT' -- node slow-event-loop
 ```
 
-Let's break this command down:
+让我们分解这个命令:
 
-- The `clinic doctor` portion invokes the Doctor command tool.
-- The `--on-port` flag will execute the supplied script as soon as the server starts
-  listening on a port.
-- The `$PORT` variable in that script is set to the first port that the server began
-  listening on.
-- Everything after the double-dash (`--`) is the command which starts the server that
-  we want to profile, in this case `node slow-event-loop`.
+- `clinic doctor`部分调用医生命令工具。
+- `--on-port`标志将在服务器开始侦听端口时立即执行提供的脚本。
+- 该脚本中的`$PORT`变量被设置为服务器开始侦听的第一个端口。
+- 双破折号(`--`)之后的所有内容都是启动我们想要分析的服务器的命令，在本例中是`node slow-event-loop`。
 
-This one command runs three executables: the `clinic doctor` parent executable, the
-`autocannon` executable in `--on-port` and the `node` executable.
+这个命令运行三个可执行文件:`clinic doctor`父可执行文件，`autocannon`可执行文件在`——on-port`和`node`可执行文件。
 
-Upon running the command, the `slow-event-loop` server will be hit by requests from
-10 concurrent connections for 10 seconds (as per `autocannon` defaults).
-then the results be compiled into a single HTML file that should automatically
-open in the browser.
+在运行该命令后，`slow-event-loop`服务器将被来自10个并发连接的请求击中10秒(按照`autocannon`的默认值)。
+然后将结果编译成一个HTML文件，该文件应该在浏览器中自动打开。
 
-The resulting HTML should look similar to the following:
+生成的HTML应该类似于以下内容:
 
-![Doctor profile screenshot](03.png)
+![医生数据图表截图](03.png)
 
 ---
 
-##### Up next
+##### 下一个
 
-[Reading a profile](/documentation/doctor/04-reading-a-profile/)
+[阅读数据图表](/documentation/doctor/04-reading-a-profile/)

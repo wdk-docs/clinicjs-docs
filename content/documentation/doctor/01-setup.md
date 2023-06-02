@@ -1,5 +1,5 @@
 ---
-title: 'Setup'
+title: '设置'
 priority: 1
 
 # SEO
@@ -10,22 +10,21 @@ metaData:
     - Documentation
 ---
 
-# Setup
+# 设置
 
-Doctor is part of the Clinic.js suit of tools. To install Doctor, simply install Clinic.js like so:
+Doctor是Clinic.js工具套装的一部分。要安装Doctor，只需像这样安装Clinic.js:
 
 ```bash
 npm install -g clinic
 ```
 
-After installing, we can check if Doctor has been installed by running the `clinic doctor` command
-with the `--help` flag.
+安装完成后，我们可以通过运行带有 `--help` 标志的 `clinic doctor` 命令来检查Doctor是否已经安装。
 
 ```bash
 clinic doctor --help
 ```
 
-It should print something similar to the following:
+它应该输出类似下面的内容:
 
 ```
 Clinic.js Doctor - v3.12.0
@@ -58,6 +57,6 @@ Flags
 
 ---
 
-##### Up next
+##### 下一个
 
-[Getting ready](/documentation/doctor/02-getting-ready/)
+[准备](/documentation/doctor/02-getting-ready/)

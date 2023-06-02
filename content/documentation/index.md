@@ -5,23 +5,23 @@ metaData:
     - Documentation
 ---
 
-# Getting started
+# 开始
 
-Before you get started with Clinic.js, first let's make sure we install it on our machines and run a couple of tests just to make sure everything is working fine. Let's follow these steps to kick off:
+在开始使用Clinic.js之前，首先让我们确保将其安装在我们的机器上，并运行几个测试以确保一切正常。让我们按照以下步骤开始:
 
-**1.** Note: You must use a version of Node.js `>= 8.11.1`
+**1.** 注意:你必须使用Node.js `>= 8.11.1`版本
 
 ```bash
 npm install -g clinic
 ```
 
-**2.** Confirm that it has installed ok with:
+**2.** 确认它已经安装好了:
 
 ```bash
 clinic --help
 ```
 
-**3.** It should print something similar to the following:
+**3.** 它应该输出类似下面的内容:
 
 ```
 Clinic.js - v2.2.1
@@ -70,7 +70,7 @@ Flags
 -v | --version             Display Version
 ```
 
-**4.** We have a set of example apps on Github. Let's run through the first one using [Clinic.js Doctor](/doctor/) and autocannon:
+**4.** 我们在Github上有一组示例应用程序。让我们使用[Clinic.js Doctor](/doctor/)和autocannon来运行第一个:
 
 ```bash
 git clone git@github.com:nearform/node-clinic-doctor-examples.git
@@ -79,16 +79,15 @@ npm install
 clinic doctor --autocannon [ / ] -- node ./slow-io
 ```
 
-This will run autocannon against a simple app with an IO issue and once it's complete it will automatically launch the Doctor tool inside your browser.
+这将对一个有IO问题的简单应用程序运行autocannon，一旦它完成，它将自动启动浏览器中的Doctor工具。
 
 ---
 
-##### Up next
+##### 下一个
 
-Normally, when using Clinic.js, we begin by using Clinic.js Doctor to identify what performance problems exist in an application. Doctor will then give us recommendations on what tools and enquires to make next.
+通常，在使用Clinic.js时，我们首先使用Clinic.js Doctor来识别应用程序中存在的性能问题。然后医生会给我们建议下一步要做什么工具和询问。
 
-[Get started with Clinic.js Doctor](/documentation/doctor/).
+[开始使用Clinic.js Doctor](./doctor/index.md).
 
-Alternatively you can dive into an in-depth overview of the CLI.
-
-[CLI](/documentation/cli).
+或者，您可以深入了解CLI的概述。
+[CLI](./cli/index.md).

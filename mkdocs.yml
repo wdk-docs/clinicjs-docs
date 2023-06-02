@@ -44,9 +44,9 @@ markdown_extensions:
       smart_enable: all
   - pymdownx.caret
   - pymdownx.details
-  - pymdownx.emoji:
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-      emoji_index: !!python/name:materialx.emoji.twemoji
+  # - pymdownx.emoji:
+  #     emoji_generator: !!python/name:materialx.emoji.to_svg
+  #     emoji_index: !!python/name:materialx.emoji.twemoji
   - pymdownx.highlight:
       anchor_linenums: true
       linenums: true
@@ -103,8 +103,8 @@ plugins:
           - reviews
 
     # GLOBAL CONFIG: configs apply to all categories
-    time_format: '%Y-%m-%d'
-    meta_time_format: '%Y-%m-%d'
+    time_format: "%Y-%m-%d"
+    meta_time_format: "%Y-%m-%d"
     features:
       tags:
         index_page: tags.md
@@ -125,7 +125,7 @@ extra:
       name: Sindre Sorhus Instagram
     - icon: fontawesome/brands/blogger
       link: https://sindresorhus.com/apps
-      name: Sindre Sorhus Blog 
+      name: Sindre Sorhus Blog
     - icon: fontawesome/brands/mastodon
       link: https://mastodon.social/@sindresorhus
       name: Sindre Sorhus Mastodon
@@ -139,48 +139,47 @@ extra:
   #   provider: mike
 nav:
   - 文档:
-    - 入门: ./documentation/index.md
-    - 医生: 
-      - ./documentation/doctor/index.md
-      - ./documentation/doctor/01-setup.md
-      - ./documentation/doctor/02-getting-ready.md
-      - ./documentation/doctor/03-first-analysis.md
-      - ./documentation/doctor/04-reading-a-profile.md
-      - ./documentation/doctor/05-fixing-event-loop-problem.md
-      - ./documentation/doctor/06-fixing-io-problem.md
-    - 火焰图: 
-      - ./documentation/flame/index.md
-      - ./documentation/flame/01-setup.md
-      - ./documentation/flame/02-getting-ready.md
-      - ./documentation/flame/03-first-analysis.md
-      - ./documentation/flame/04-flamegraphs.md
-      - ./documentation/flame/05-controls.md
-      - ./documentation/flame/06-optimizing-a-hot-function.md
-      - ./documentation/flame/07-reducing-th-graph-size.md
-      - ./documentation/flame/08-advanced-analysis.md
-      - ./documentation/flame/09-advanced-controls.md
-    - Bubbleprof: 
-      - ./documentation/bubbleprof/index.md
-      - ./documentation/bubbleprof/01-setup.md
-      - ./documentation/bubbleprof/02-getting-ready.md
-      - ./documentation/bubbleprof/03-first-analysis.md
-      - ./documentation/bubbleprof/04-bubbles.md
-      - ./documentation/bubbleprof/05-sidebar.md
-      - ./documentation/bubbleprof/06-finding-the-first-bottleneck.md
-      - ./documentation/bubbleprof/07-improving-our-latency.md
-      - ./documentation/bubbleprof/08-parallel-queries.md
-      - ./documentation/bubbleprof/09-caching-the-results.md
-    - CLI: 
-      - ./documentation/cli/index.md
-      - ./documentation/cli/01-simulating-load.md
-      - ./documentation/cli/02-controlling-the-output.md
-      - ./documentation/cli/03-managing-samples.md
-      - ./documentation/cli/04-reference.md
-    - 堆分析器: ./documentation/heapprofiler/index.md
+      - 入门: ./documentation/index.md
+      - 医生:
+          - ./documentation/doctor/index.md
+          - ./documentation/doctor/01-setup.md
+          - ./documentation/doctor/02-getting-ready.md
+          - ./documentation/doctor/03-first-analysis.md
+          - ./documentation/doctor/04-reading-a-profile.md
+          - ./documentation/doctor/05-fixing-event-loop-problem.md
+          - ./documentation/doctor/06-fixing-io-problem.md
+      - 火焰图:
+          - ./documentation/flame/index.md
+          - ./documentation/flame/01-setup.md
+          - ./documentation/flame/02-getting-ready.md
+          - ./documentation/flame/03-first-analysis.md
+          - ./documentation/flame/04-flamegraphs.md
+          - ./documentation/flame/05-controls.md
+          - ./documentation/flame/06-optimizing-a-hot-function.md
+          - ./documentation/flame/07-reducing-th-graph-size.md
+          - ./documentation/flame/08-advanced-analysis.md
+          - ./documentation/flame/09-advanced-controls.md
+      - Bubbleprof:
+          - ./documentation/bubbleprof/index.md
+          - ./documentation/bubbleprof/01-setup.md
+          - ./documentation/bubbleprof/02-getting-ready.md
+          - ./documentation/bubbleprof/03-first-analysis.md
+          - ./documentation/bubbleprof/04-bubbles.md
+          - ./documentation/bubbleprof/05-sidebar.md
+          - ./documentation/bubbleprof/06-finding-the-first-bottleneck.md
+          - ./documentation/bubbleprof/07-improving-our-latency.md
+          - ./documentation/bubbleprof/08-parallel-queries.md
+          - ./documentation/bubbleprof/09-caching-the-results.md
+      - CLI:
+          - ./documentation/cli/index.md
+          - ./documentation/cli/01-simulating-load.md
+          - ./documentation/cli/02-controlling-the-output.md
+          - ./documentation/cli/03-managing-samples.md
+          - ./documentation/cli/04-reference.md
+      - 堆分析器: ./documentation/heapprofiler/index.md
   - 医生: ./doctor/index.md
   - 火焰图: ./flame/index.md
   - Bubbleprof: ./bubbleprof/index.md
   - 堆分析器: ./heapprofiler/index.md
   - 日志: ./blog/index.md
   - 关于: ./about/index.md
-    
