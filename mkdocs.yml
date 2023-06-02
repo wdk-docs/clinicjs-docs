@@ -1,0 +1,186 @@
+site_name: ClinicJS 文档
+site_url: https://wdk-docs.github.io/clinicjs-docs/
+site_author: CLINICJS
+site_description: ClinicJS 文档
+docs_dir: content
+site_dir: docs
+dev_addr: 127.0.0.1:8001
+extra_css:
+  - stylesheets/extra.css
+
+repo_name: wdk-docs/clinicjs-docs
+repo_url: https://github.com/wdk-docs/clinicjs-docs
+edit_uri: edit/master/content
+
+theme:
+  name: material
+  logo: assets/logo/logo.svg
+  favicon: assets/favicons/favicon.ico
+  language: zh
+  # custom_dir: overrides
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.tracking
+    - navigation.top
+    - navigation.indexes # 父菜单索引
+    # - navigation.sections # 全部展开
+    # - navigation.expand # 打开收缩
+    - content.code.annotate
+    - navigation.top # 返回头部
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.magiclink
+
+plugins:
+  search:
+    # Spaces, dashes, periods and forward-slash (so serving.knative.dev/blibble can be searched as blibble).
+    separator: '[\/\s\-\.]+'
+  # macros:
+  #   module_name: hack/macros
+  #   include_dir: source/snippets
+  exclude:
+    glob:
+      # Exclude files that contain hugo specific shortcodes
+      # (either the include shortcode or not-converted-yet tabs).
+      - snippets/*
+      - smoketest.md
+  awesome-pages:
+    filename: ".index"
+    collapse_single_pages: true
+    strict: false
+  blogging:
+    # GLOBAL CATEGORY: configs for {{ blog_content }}
+    dirs:
+      - blog
+    # template: override/custom-blog.html
+
+    # INDIVIDUAL CATEGORIES: configs for {{ blog_content name }}
+    categories:
+      - name: reviews
+        dirs:
+          - reviews
+
+    # GLOBAL CONFIG: configs apply to all categories
+    time_format: '%Y-%m-%d'
+    meta_time_format: '%Y-%m-%d'
+    features:
+      tags:
+        index_page: tags.md
+        insert: top
+
+copyright: "版权所有 © 2017-2023 MIT by Sindre Sorhus"
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/sindresorhus
+      name: Sindre Sorhus Twitter
+    - icon: fontawesome/brands/github
+      link: https://github.com/sindresorhus
+      name: Sindre Sorhus Github
+    - icon: fontawesome/brands/instagram
+      link: https://instagram.com/sindresorhus
+      name: Sindre Sorhus Instagram
+    - icon: fontawesome/brands/blogger
+      link: https://sindresorhus.com/apps
+      name: Sindre Sorhus Blog 
+    - icon: fontawesome/brands/mastodon
+      link: https://mastodon.social/@sindresorhus
+      name: Sindre Sorhus Mastodon
+  version_warning: !!python/object/apply:os.getenv ["VERSION_WARNING"]
+  knative_version: !!python/object/apply:os.getenv ["KNATIVE_VERSION"]
+  branch: !!python/object/apply:os.getenv ["SAMPLES_BRANCH", "main"]
+  # analytics:
+  #   provider: google
+  #   property: G-YRMNFYE32R
+  # version:
+  #   provider: mike
+nav:
+  - 文档:
+    - 入门: ./documentation/index.md
+    - 医生: 
+      - ./documentation/doctor/index.md
+      - ./documentation/doctor/01-setup.md
+      - ./documentation/doctor/02-getting-ready.md
+      - ./documentation/doctor/03-first-analysis.md
+      - ./documentation/doctor/04-reading-a-profile.md
+      - ./documentation/doctor/05-fixing-event-loop-problem.md
+      - ./documentation/doctor/06-fixing-io-problem.md
+    - 火焰图: 
+      - ./documentation/flame/index.md
+      - ./documentation/flame/01-setup.md
+      - ./documentation/flame/02-getting-ready.md
+      - ./documentation/flame/03-first-analysis.md
+      - ./documentation/flame/04-flamegraphs.md
+      - ./documentation/flame/05-controls.md
+      - ./documentation/flame/06-optimizing-a-hot-function.md
+      - ./documentation/flame/07-reducing-th-graph-size.md
+      - ./documentation/flame/08-advanced-analysis.md
+      - ./documentation/flame/09-advanced-controls.md
+    - Bubbleprof: 
+      - ./documentation/bubbleprof/index.md
+      - ./documentation/bubbleprof/01-setup.md
+      - ./documentation/bubbleprof/02-getting-ready.md
+      - ./documentation/bubbleprof/03-first-analysis.md
+      - ./documentation/bubbleprof/04-bubbles.md
+      - ./documentation/bubbleprof/05-sidebar.md
+      - ./documentation/bubbleprof/06-finding-the-first-bottleneck.md
+      - ./documentation/bubbleprof/07-improving-our-latency.md
+      - ./documentation/bubbleprof/08-parallel-queries.md
+      - ./documentation/bubbleprof/09-caching-the-results.md
+    - CLI: 
+      - ./documentation/cli/index.md
+      - ./documentation/cli/01-simulating-load.md
+      - ./documentation/cli/02-controlling-the-output.md
+      - ./documentation/cli/03-managing-samples.md
+      - ./documentation/cli/04-reference.md
+    - 堆分析器: ./documentation/heapprofiler/index.md
+  - 医生: ./doctor/index.md
+  - 火焰图: ./flame/index.md
+  - Bubbleprof: ./bubbleprof/index.md
+  - 堆分析器: ./heapprofiler/index.md
+  - 日志: ./blog/index.md
+  - 关于: ./about/index.md
+    
