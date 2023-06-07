@@ -10,60 +10,61 @@ metaData:
 
 # CLI
 
-Clinic.js comes with a number of tools to help us identify performance issues in our Node.js applications. All these tools can be accessed using the top-level `clinic` command once [Clinic.js is installed](/documentation/).
+Clinic.js 提供了许多工具来帮助我们识别 Node.js 应用程序中的性能问题。
+一旦安装了[Clinic.js](/documentation/)，就可以使用顶层的' clinic '命令访问所有这些工具。
 
-## The anatomy of a command
+## 命令的剖析
 
-A Clinic.js command in its simplest form that generates a [Doctor](/doctor/) sample is as follows:
+生成[Doctor](/doctor/)样本的最简单形式的 Clinic.js 命令如下:
 
 ```
 clinic doctor -- node server.js
 ```
 
-The `--` denotes the [end of the command and flags](https://nodejs.org/api/cli.html#cli_1), dividing the command into the following two related parts:
+“——”表示[命令和标志的结束](https://nodejs.org/api/cli.html#cli_1)，将命令分为以下两个相关部分:
 
-**1.** `clinic doctor` informs Clinic.js that we wish to use [Clinic.js Doctor](/documentation/doctor/) to get an overview of our application's current performance.
+**1.** ' clinic doctor '通知 Clinic.js 我们希望使用[clinic .js doctor](/documentation/doctor/)来获得应用程序当前性能的概述。
 
-**2.** `node server.js` is the command we use in order to run our Node.js application from the command line as normal. 
+**2.** ' node server.js '是我们用来从命令行正常运行 Node.js 应用程序的命令。
 
-If our application needs some [environment variables](https://nodejs.org/api/cli.html#cli_environment_variables), we can set them beforehand:
+如果我们的应用程序需要一些[环境变量](https://nodejs.org/api/cli.html#cli_environment_variables)，我们可以事先设置它们:
 
 ```
 NODE_ENV=production clinic doctor -- node server.js
 ```
 
-From here, we can start making the most out of Clinic.js by [simulating load](/documentation/cli/01-simulating-load/).
+从这里开始，我们可以通过[simulating load](./01-simulating-load.md)开始充分利用 Clinic.js。
 
-## Viewing tool information
+## 查看工具信息
 
-To see all help information relating to a Clinic.js tool including the version and [supported flags](/documentation/cli/04-reference/#flags) we can simply run:
+要查看与 Clinic.js 工具相关的所有帮助信息，包括版本和[支持的标志](/documentation/cli/04-reference/#flags)，我们可以简单地运行:
 
 ```
 clinic doctor --help
 ```
 
-Or, to quickly see the version of each Clinic.js tool:
+或者，快速查看每个 Clinic.js 工具的版本:
 
 ```
 clinic flame --version
 ```
 
-If we want to just see information about an installed version of Clinic.js:
+如果我们只想查看有关已安装的 Clinic.js 版本的信息:
 
 ```
 clinic --help
 ```
 
-Or, to just see the installed version of Clinic.js:
+或者，查看已安装的 Clinic.js 版本:
 
 ```
 clinic --version
 ```
 
-For a complete list of options, see the [CLI reference](/documentation/cli/04-reference).
+有关完整的选项列表，请参阅[CLI 参考](./04-reference.md).
 
 ---
 
-##### Up next
+##### 下一个
 
-[Simulating load](/documentation/cli/01-simulating-load/)
+[模拟负载](./01-simulating-load.md)

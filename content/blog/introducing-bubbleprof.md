@@ -1,9 +1,9 @@
 ---
-author: 'Alan Slater, Kamil Mech, Mathias Buus, Matteo Collina'
-date: '2018-07-23'
+author: "Alan Slater, Kamil Mech, Mathias Buus, Matteo Collina"
+date: "2018-07-23"
 draft: false
-title: '介绍Bubbleprof —— 一种新颖的Node.js异步分析方法'
-hero: '/assets/images/blog-thumb/bp01.jpg'
+title: "介绍Bubbleprof —— 一种新颖的Node.js异步分析方法"
+hero: "/assets/images/blog-thumb/bp01.jpg"
 
 # SEO
 metaData:
@@ -12,7 +12,7 @@ metaData:
     - Blog
 ---
 
-<video src="/assets/videos/bubbleprof-screen-recording.mp4" playsinline loop autoplay muted></video>
+<video src="../../../assets/videos/bubbleprof-screen-recording.mp4" playsinline loop autoplay muted></video>
 
 Since the beginning of Node, profiling asynchronous operations has been a big
 hurdle. After months of internal research we have finally found a solution which
@@ -118,24 +118,24 @@ If we add some `async_hooks` magic to our previous example, then we can figure
 out which of the `setTimeout`s made our program crash:
 
 ```js
-const hooks = require('async_hooks')
-const stacks = []
+const hooks = require("async_hooks");
+const stacks = [];
 
 hooks
   .createHook({
     // save the stack when we do something async
-    init: (id, type, trigger) => (stacks[id] = new Error('error').stack)
+    init: (id, type, trigger) => (stacks[id] = new Error("error").stack),
   })
-  .enable()
+  .enable();
 
-setTimeout(crash, 1000) // maybe crash after 1s
-setTimeout(crash, 1000) // call it again
+setTimeout(crash, 1000); // maybe crash after 1s
+setTimeout(crash, 1000); // call it again
 
 function crash() {
   if (Math.random() < 0.5) {
     // lookup the previous stack
-    console.log(stacks[hooks.executionAsyncId()])
-    throw new Error('an async error')
+    console.log(stacks[hooks.executionAsyncId()]);
+    throw new Error("an async error");
   }
 }
 ```
@@ -202,7 +202,7 @@ MongoDB:
 
 ![Example 2](images/2018/07/2.png)
 
-[Live example](/assets/html/bubbleprof-example.html)
+[Live example](../../../assets/html/bubbleprof-example.html)
 
 ### Bubbles and links
 
@@ -228,7 +228,7 @@ focus on: our own code, which might be a quick win.
 
 ![Example 2](images/2018/07/3.png)
 
-[Live example](/assets/html/bubbleprof-example.html)
+[Live example](../../../assets/html/bubbleprof-example.html)
 
 ### Drilling down to code
 
@@ -240,7 +240,7 @@ of the chain of events from our application's initiation to this point.
 
 ![Example 3](images/2018/07/4.png)
 
-[Live example](/assets/html/bubbleprof-example.html#a49)
+[Live example](../../../assets/html/bubbleprof-example.html#a49)
 
 Because these traces can be very long, we group adjacent frames from the same
 section of code, automatically expanding those from the user's own application.
@@ -260,7 +260,7 @@ by `Connection.connect`, called from within `node_modules/mongodb-core`.
 
 ![Example 4](images/2018/07/5.png)
 
-[Live example](/assets/html/bubbleprof-example.html#c3)
+[Live example](../../../assets/html/bubbleprof-example.html#c3)
 
 ### Navigating async complexity
 
@@ -272,7 +272,7 @@ together.
 
 ![Example 6](images/2018/07/6.png)
 
-[Live example](/assets/html/bubbleprof-example.html#lclump:A10,A11,A12,A13,A14,A15,A16,A17,A18,A19,A20,A21|c3)
+[Live example](../../../assets/html/bubbleprof-example.html#lclump:A10,A11,A12,A13,A14,A15,A16,A17,A18,A19,A20,A21|c3)
 
 Exploring this view, we see activity mostly relating to database connection
 pools and sockets. Everything looks fine in terms of speed, and we can use these

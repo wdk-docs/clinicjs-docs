@@ -1,5 +1,5 @@
 ---
-title: 'Flamegraphs'
+title: "火焰图"
 priority: 4
 
 # SEO
@@ -10,56 +10,61 @@ metaData:
     - Documentation
 ---
 
-# Flamegraphs
+# 火焰图
 
-Let's take a look again at the flamegraph generated in the prior [First analysis](/documentation/flame/03-first-analysis/) step.
+让我们再看一下在前面[首先分析](/documentation/flame/03-first-analysis/)步骤中生成的火焰图.
 
 ![Example flamegraph from node-clinic-flame-demo](03.png)
 
-Ignoring the surrounding controls for the moment, let's focus in on understanding the visualization.
+暂时忽略周围的控件，让我们专注于理解可视化。
 
-When generating a flamegraph we are asking three key questions:
+在生成火焰图时，我们要问三个关键问题:
 
-- During the sampling period, which functions called each other?
-- How much time was each function observed on-CPU?
-- How much time was each function observed at the top of the stack?
+- 在抽样期间，哪些函数相互调用?
+- 每个函数在 cpu 上运行的时间是多少?
+- 每个函数在栈顶被观察的时间是多少?
 
-These three questions are answered visually.
+这三个问题的答案显而易见。
 
-## Which functions called each other (the stack)
+## 哪些函数相互调用(堆栈)
 
-Each block represents the invocations of one function, aggregated by the call stack that led to it. When one block sits on top of another, it was called by the block below it, which was called by the block below it, and so on down the stack.
+每个块代表一个函数的调用，由导致该函数的调用堆栈聚合。当一个块位于另一个块的顶部时，它被它下面的块调用，它被它下面的块调用，以此类推。
 
 ![Example of how flamegraphs represent call stacks](04-A.png)
 
-In Clinic.js Flame, the text and outline colours of each block help you navigate. White represents code in the application being profiled (i.e. code under your direct control). Blue represents your dependencies in `node_modules`, while grey represents code in Node.js core itself.
+在 Clinic.js Flame 中，每个块的文本和轮廓颜色可以帮助你导航。
+白色代表被分析的应用程序中的代码(即在您直接控制下的代码)。
+蓝色代表你在 node_modules 中的依赖，而灰色代表 Node.js 核心本身的代码。
 
-## How long, in aggregate, was a function on-CPU (block width)
+## 一个函数在 cpu 上的总长度(块宽度)
 
-The width of a block represents the amount of time it was on the CPU, out of the duration of the profile run. This does not necessarily mean the function was executing its own code: where there are blocks above it, it had called that function and was waiting for it to complete.
+块的宽度表示在概要文件运行的持续时间之外，它在 CPU 上的时间量。
+这并不一定意味着函数在执行它自己的代码:在它上面有块的地方，它已经调用了那个函数，正在等待它完成。
 
-Clinic.js Flame sorts the functions called by each function so that the widest blocks (the functions spending longest on the CPU) are shown first, on the left.
+Flame 对每个函数调用的函数进行排序，以便最宽的块(在 CPU 上花费时间最长的函数)首先显示在左侧。
 
 ![Example of how block width shows time on CPU](04-B.png)
 
-## How often was a function at the top of stack ("heat")
+## 函数在栈顶(“heat”)出现的频率是多少?
 
-This can be rephrased as: "For how long was a function blocking the Node.js event loop".
-If a function is frequently observed at the top of the stack, it means it
-is spending more time executing its own code than calling other functions
-or allowing function callbacks to trigger.
+这可以改写为:“一个函数阻塞了 Node.js 事件循环多长时间”。
+如果一个函数经常在堆栈的顶部被观察到，这意味着它花费更多的时间来执行自己的代码，而不是调用其他函数或允许函数回调触发。
 
-In Node.js, only one function can execute at any one time (ignoring possibilities like Worker threads). If a function takes a long time to execute,
-nothing else can happen, including the triggering of I/O callbacks. This is the essence of the phrase "blocking the event loop".
+在 Node.js 中，每次只能执行一个函数(忽略 Worker 线程之类的可能性)。
+如果一个函数需要很长时间才能执行，那么就不会发生其他任何事情，包括触发 I/O 回调。
+这就是“阻塞事件循环”的本质。
 
-The brightness of the bar along the exposed top of a block indicates the percentage of time a function was observed at the top of the stack. In other words, the hotter (or, brighter) a block, the more actual time it was taking to execute its own code, preventing any other code from executing.
+沿着暴露的块顶部的条的亮度表示在堆栈顶部观察函数的时间百分比。
+换句话说，一个块越热(或越亮)，它执行自己的代码所花费的实际时间就越多，从而阻止任何其他代码的执行。
 
 ![Example of Clinic.js Flame using brightness of exposed tops to show "heat"](04-C.png)
 
-When a function is blocking the event loop in higher proportion to other functions we call this a "hot" function. Looking for these "hot" functions is a good place to start looking for places to optimise your code. Clinic.js Flame by default selects the "hottest" frame, and gives controls to cycle through the next hottest.
+当一个函数阻塞事件循环的比例高于其他函数时，我们称之为“热”函数。
+寻找这些“热门”函数是开始寻找优化代码的好地方。
+Flame 默认选择“最热”的帧，并控制下一个最热帧的循环。
 
 ---
 
-##### Up next
+## 下一个
 
-[Controls](/documentation/flame/05-controls/)
+[控制器](/documentation/flame/05-controls/)

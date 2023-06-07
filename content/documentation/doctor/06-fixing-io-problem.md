@@ -1,5 +1,5 @@
 ---
-title: '修复I/O问题'
+title: "修复I/O问题"
 priority: 6
 
 # SEO
@@ -10,148 +10,134 @@ metaData:
     - Documentation
 ---
 
-# Fixing an I/O problem
+# 修复 I/O 问题
 
-In [Reading A Profile](/documentation/doctor/04-reading-a-profile/), we saw that the CPU Usage
-graph can indicate problems with Node.js I/O (Input/Output) operations delegated to other processes,
-such as slow database queries or file writes delegated by [libuv](https://libuv.org/)).
-Let's look at that in more detail with an example.
+在[阅读个人资料](/documentation/doctor/04-reading-a-profile/)中，我们看到 CPU 使用图可以指出委派给其他进程的 Node.js I/O(输入/输出)操作的问题，例如缓慢的数据库查询或由[libuv](https://libuv.org/)委派的文件写。
+让我们通过一个例子来更详细地研究一下。
 
-## Consulting the Doctor
+## 咨询医生
 
-There is an example server for this problem in `node-clinic-doctor-examples`, called `slow-io`.
-Assuming we have everything set up as described in
-[Getting Ready](/documentation/doctor/02-getting-ready/) and
-[First Analysis](/documentation/doctor/03-first-analysis/), let's
-create a Clinic.js Doctor profile from that server:
+在`node-clinic-doctor-examples`中有一个关于这个问题的示例服务器，称为`slow-io`。
+假设我们已经按照[准备](/documentation/doctor/02-getting-ready/)和[分析](/documentation/doctor/03-first-analysis/)中所描述的设置了一切，让我们从该服务器创建一个`Clinic.js`医生数据图表:
 
 ```sh
 clinic doctor --on-port 'autocannon localhost:$PORT' -- node slow-io
 ```
 
-The output should look something like this:
+输出应该看起来像这样:
 
 ![Clinic.js Doctor profile showing slow io](06-A.png)
 
-The CPU Usage graph is highlighted in red. It shows several spikes, but is mostly low.
-There is less CPU activity than we'd expect from a busy server. The Recommendations Panel
-explains that this is likely caused by slow _asynchronous_ operations: our application
-is waiting for external I/O to resolve promises or trigger callbacks.
+CPU 使用率图以红色突出显示。
+它显示了几个峰值，但大多数都很低。
+在繁忙的服务器上，CPU 活动比我们期望的要少。
+建议面板解释说，这可能是由缓慢的异步操作引起的:我们的应用程序正在等待外部 I/O 来解决承诺或触发回调。
 
-This is a very different problem to the one we saw while
-[Fixing an event loop problem](/documentation/doctor/05-fixing-event-loop-problem/).
-The Recommendations Panel advises that we use another Clinic.js tool, `clinic bubbleprof`.
+这与我们在[修复事件循环问题](/documentation/doctor/05-fixing-event-loop-problem/)中看到的问题非常不同。
+建议小组建议我们使用另一个 `Clinic.js` 工具`clinic bubbleprof`。
 
-## Following the prescription
+## 按照处方
 
-We can create a Bubbleprof profile with a command that is the same as for Doctor,
-but swapping `bubbleprof` in for `doctor`:
+我们可以使用与 Doctor 相同的命令创建一个 Bubbleprof 数据图表，但将`doctor`替换为`bubbleprof`:
 
 ```sh
 clinic bubbleprof --on-port 'autocannon localhost:$PORT' -- node slow-io
 ```
 
-Our output looks something like this:
+我们的输出看起来像这样:
 
 ![Clinic.js Bubbleprof profile](06-B.png)
 
-`node-clinic-doctor-examples` uses very simple example servers, so for now
-we'll only need to look at the main diagram, not the more advanced features
-detailed in the [Clinic.js Bubbleprof documentation walkthrough](/documentation/bubbleprof/).
+`node-clinic-doctor-examples` 使用了非常简单的示例服务器，所以现在我们只需要查看主图，而不需要查看[Clinic.js Bubbleprof 文档指南](/documentation/bubbleprof/)中详细介绍的更高级的特性。
 
-The main diagram shows a busy `http.connection`, calling a `timeout`, which then calls
-more `timeout`s in parrallel. That first `timeout` looks key - the rest of the application
-branches off from it.
+主图显示了一个繁忙的`http.connection`，调用`timeout`，然后并行调用更多的`timeout`。
+第一个`timeout`看起来很关键——应用程序的其余部分将从它分支出来。
 
-It could be our bottleneck.
+这可能是我们的瓶颈。
 
-Clicking on it opens it out to show two parts. Clicking on the longer part points us to some code:
-a function `async.series`, in our application, file `./index.js`, line 9, column 16:
+单击它将打开它，显示两个部分。
+点击较长的部分指向一些代码:一个函数 `asyn.cseries`，在我们的应用程序中，文件`./index.js`，第 9 行，第 16 列:
 
 ![Clinic.js Bubbleprof profile](06-C.png)
 
-If we open `node-clinic-doctor-examples/slow-io/index.js` and find that line, we see:
+如果我们打开`node-clinic-doctor-examples/slow-io/index.js`并找到这一行，我们会看到:
 
 ```js
 function awaitData(callback) {
   async.series(
     [
-      done1 => setTimeout(done1, Math.random() * 1000),
-      done1 =>
+      (done1) => setTimeout(done1, Math.random() * 1000),
+      (done1) =>
         async.parallel(
           [
-            done2 => setTimeout(done2, Math.random() * 1000),
-            done2 => setTimeout(done2, Math.random() * 1000),
-            done2 => setTimeout(done2, Math.random() * 1000),
-            done2 => setTimeout(done2, Math.random() * 1000),
-            done2 => setTimeout(done2, Math.random() * 1000)
+            (done2) => setTimeout(done2, Math.random() * 1000),
+            (done2) => setTimeout(done2, Math.random() * 1000),
+            (done2) => setTimeout(done2, Math.random() * 1000),
+            (done2) => setTimeout(done2, Math.random() * 1000),
+            (done2) => setTimeout(done2, Math.random() * 1000),
           ],
           done1
-        )
+        ),
     ],
     callback
-  )
+  );
 }
 ```
 
-This is what Node.js is waiting on - chained timeouts.
+这就是 Node.js 正在等待的-链式超时。
 
-If the delay was an external process like a slow database query, the clues visible to
-us within Node.js would be the same. We can't see what exactly is happening within the external
-operation, but we can identify _which_ asynchronous operation Node.js is waiting for.
+如果延迟是一个外部过程，比如缓慢的数据库查询，那么我们在 Node.js 中看到的线索将是相同的。
+我们无法看到外部操作中究竟发生了什么，但是我们可以识别出 Node.js 正在等待的是哪个异步操作。
 
-## Curing the ailment
+## 治疗疾病
 
-Let's reduce the duration of the timeouts, changing the second argument passed to `setTimeout` from `1000` to `1`.
-This simulates dramatically speeding up the external I/O:
+让我们减少超时的持续时间，将传递给`setTimeout`的第二个参数从`1000`改为`1`。
+这模拟了显著加速外部 I/O:
 
 ```js
 function awaitData(callback) {
   async.series(
     [
-      done1 => setTimeout(done1, 1),
-      done1 =>
+      (done1) => setTimeout(done1, 1),
+      (done1) =>
         async.parallel(
           [
-            done2 => setTimeout(done2, 1),
-            done2 => setTimeout(done2, 1),
-            done2 => setTimeout(done2, 1),
-            done2 => setTimeout(done2, 1),
-            done2 => setTimeout(done2, 1)
+            (done2) => setTimeout(done2, 1),
+            (done2) => setTimeout(done2, 1),
+            (done2) => setTimeout(done2, 1),
+            (done2) => setTimeout(done2, 1),
+            (done2) => setTimeout(done2, 1),
           ],
           done1
-        )
+        ),
     ],
     callback
-  )
+  );
 }
 ```
 
-We then save, and recreate the profile:
+然后保存并重新创建数据图表:
 
 ```sh
 clinic doctor --on-port 'autocannon localhost:$PORT' -- node slow-io
 ```
 
-The profile now detects no issues. Everything is blue, the graphs look healthy,
-the CPU is active, and Doctor's Recommendations Panel is cheerfully telling us
-that "Everything looks good!".
+数据图表现在没有检测到任何问题。一切都是蓝色的，图形看起来很健康，CPU 是活跃的，医生的建议面板兴高采烈地告诉我们"Everything looks good!"
 
 ![Clinic.js Doctor profile, reporting no issue](06-D.png)
 
-This is a very simple example server. In a more complex application, we would normally
-need to explore the Clinic.js Bubbleprof profile deeper to hone in on the cause or causes of
-the bottleneck. Detailed examples of how to do this are available in the
-[Clinic.js Bubbleprof documentation](/documentation/bubbleprof/).
+这是一个非常简单的示例服务器。
+在更复杂的应用程序中，我们通常需要更深入地研究 Clinic.js Bubbleprof 数据图表，以深入了解瓶颈的原因。
+如何做到这一点的详细示例可以在[Clinic.js Bubbleprof 文档](/documentation/bubbleprof/)中找到。
 
 ---
 
-##### Up next
+## 下一个
 
-We're now familiar with how to use Doctor to identify the type of problem. The next step is learning
-more about those tools we can use to hone in on specific code.
+我们现在熟悉了如何使用 Doctor 来识别问题的类型。
+下一步是学习更多关于这些工具的知识，我们可以使用这些工具来磨练特定的代码。
 
-We're now ready to move on to the walkthrough documentation for:
+现在，我们准备好进入以下内容的演练文档:
 
-- [Clinic.js Flame](/documentation/flame/), for identifying slow synchronous code
-- [Clinic.js Bubbleprof](/documentation/bubbleprof/), for finding problems in asynchronous code
+- [Clinic.js Flame](/documentation/flame/), 用于识别慢同步代码
+- [Clinic.js Bubbleprof](/documentation/bubbleprof/), 查找异步代码中的问题

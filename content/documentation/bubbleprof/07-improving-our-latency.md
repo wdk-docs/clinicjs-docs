@@ -1,5 +1,5 @@
 ---
-title: 'Improving our latency'
+title: "改善我们的延迟"
 priority: 7
 
 # SEO
@@ -10,7 +10,7 @@ metaData:
     - Documentation
 ---
 
-# Improving our latency
+# 改善我们的延迟
 
 In our example, we have already added an ascending index based on the `modified` (datetime)
 attribute in our data. This indexed collection is used by the second
@@ -43,6 +43,6 @@ this bubble much smaller and hopefully increase performance.
 
 ---
 
-##### Up next
+## 下一个
 
 [Parallel queries](/documentation/bubbleprof/08-parallel-queries/)

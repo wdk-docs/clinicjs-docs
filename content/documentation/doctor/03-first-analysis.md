@@ -1,16 +1,16 @@
 ---
-title: '首先分析'
+title: "首先分析"
 priority: 3
 
 # SEO
 metaData:
   titleParts:
-    - First analysis
+    - 首先分析
     - Doctor
     - Documentation
 ---
 
-#   首先分析
+# 首先分析
 
 现在我们准备分析其中一个示例应用程序。
 对于第一个例子，我们将使用 `slow-event-loop`。
@@ -30,8 +30,8 @@ metaData:
 npm install -g autocannon
 ```
 
-为了对服务器进行负载测试，我们希望使用Doctor运行它，并在它开始侦听端口时将`autocannon`指向它。
-一旦服务器准备好处理请求并且Doctor准备好收集数据，服务器就会被请求轰炸。
+为了对服务器进行负载测试，我们希望使用 Doctor 运行它，并在它开始侦听端口时将`autocannon`指向它。
+一旦服务器准备好处理请求并且 Doctor 准备好收集数据，服务器就会被请求轰炸。
 
 让我们用这个命令来完成所有这些，它会自动分配正确的端口:
 
@@ -48,15 +48,15 @@ clinic doctor --on-port 'autocannon localhost:$PORT' -- node slow-event-loop
 
 这个命令运行三个可执行文件:`clinic doctor`父可执行文件，`autocannon`可执行文件在`——on-port`和`node`可执行文件。
 
-在运行该命令后，`slow-event-loop`服务器将被来自10个并发连接的请求击中10秒(按照`autocannon`的默认值)。
-然后将结果编译成一个HTML文件，该文件应该在浏览器中自动打开。
+在运行该命令后，`slow-event-loop`服务器将被来自 10 个并发连接的请求击中 10 秒(按照`autocannon`的默认值)。
+然后将结果编译成一个 HTML 文件，该文件应该在浏览器中自动打开。
 
-生成的HTML应该类似于以下内容:
+生成的 HTML 应该类似于以下内容:
 
 ![医生数据图表截图](03.png)
 
 ---
 
-##### 下一个
+## 下一个
 
 [阅读数据图表](/documentation/doctor/04-reading-a-profile/)

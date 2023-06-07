@@ -9,31 +9,34 @@ metaData:
     - Documentation
 ---
 
-# Managing samples
+# 管理样品
 
-After we've used Clinic.js tools to gain insight into our application's performance, addressed some observed bottlenecks and re-tested, we might end up with a directory filled with Clinic.js-generated samples. To remove all of these files and directories we can run the following command from the directory these samples reside in:
+在使用 Clinic.js 工具深入了解应用程序的性能、解决了一些观察到的瓶颈并重新测试之后，我们可能会得到一个目录，里面装满了由 Clinic.js 生成的示例。
+要删除所有这些文件和目录，我们可以在这些示例所在的目录下运行以下命令:
 
 ```bash
 clinic clean
 ```
 
-If we've placed our files somewhere else, we can simply add the `--path` flag to point to that directory instead:
+如果我们把文件放在了其他地方，我们可以简单地添加'——path '标志来指向那个目录:
 
 ```bash
 clinic clean --path ../some-other-dir
 ```
 
-After running this command there should be no more samples left in the directory. This can be a handy step if we've finished analysing our app and need to push code changes, but don't want Clinic.js samples in our application's repo.
+运行此命令后，目录中应该没有更多的示例。
+如果我们已经完成了对应用程序的分析，并且需要推送代码更改，但又不希望在应用程序的 repo 中看到 Clinic.js 示例，那么这一步就非常方便了。
 
-## Ignoring files in git
+## 忽略 git 中的文件
 
-With `git`, we can add this entry to our application's `.gitignore` file to ensure any samples are ignored in the future:
+使用' git '，我们可以将这个条目添加到应用程序的' .gitignore '文件中，以确保将来忽略任何示例:
 
 ```
 .clinic
 ```
 
-Alternatively, we can use a global gitignore, so the project does not have to change to accomodate Clinic.js. To configure a global ignore file for git, and add `.clinic` to it, open a command line and do:
+或者，我们可以使用全局 gitignore，这样项目就不必为了适应 Clinic.js 而进行更改。
+要为 git 配置一个全局忽略文件，并在其中添加' .clinic '，打开命令行并执行:
 
 ```bash
 git config --global core.excludesfile ~/.gitignore_global
@@ -42,6 +45,6 @@ echo '.clinic' >> ~/.gitignore_global
 
 ---
 
-##### Up next
+## 下一个
 
-Get up to speed with the ins and outs of Clinic.js with the [CLI reference](/documentation/cli/04-reference).
+使用[CLI 参考](./04-reference.md)快速了解 Clinic.js 的来龙去脉.

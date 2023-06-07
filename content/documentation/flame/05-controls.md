@@ -1,5 +1,5 @@
 ---
-title: 'Controls'
+title: "控制器"
 priority: 5
 
 # SEO
@@ -10,185 +10,143 @@ metaData:
     - Documentation
 ---
 
-# Controls
+# 控制器
 
-The Clinic.js Flame UI controls have three main sections:
+' Clinic.js ' Flame UI 控件有三个主要部分:
 
-- **Flamegraph controls**: Interacting with the flamegraph itself
-- **Info Panel**: Along the top, containing info about the block currently highlighted
-- **Options Menu**: More advanced controls expandable from the info panel
+- **Flamegraph controls**: 与火焰本身相互作用
+- **Info Panel**: 沿着顶部，包含当前突出显示的块的信息
+- **Options Menu**: 更高级的控件可从信息面板展开
 
-## Flamegraph controls
+## 火焰图控件
 
-#### Interacting with a flamegraph block
+#### 与火焰块交互
 
-**Hovering** the mouse over a block will temporarily show info about that
-block in the info panel at the top of the screen.
+**Hovering** 鼠标停留在一个块上，将在屏幕顶部的信息面板中暂时显示有关该块的信息。
 
-**Clicking** will select the block, so that the info panel reverts to that
-block when you are no longer hovering over anything.
+**Clicking** 将选择块，使信息面板恢复到该块，当你不再悬停在任何东西。
 
-If you find an interesting-looking block, it can be useful to click on it
-so you can hover around exploring its neighbours without losing it.
+如果你发现了一个看起来很有趣的方块，点击它是很有用的，这样你就可以在它周围徘徊，探索它的邻居，而不会失去它。
 
-<video src="/assets/videos/flame-docs-A.mp4" playsinline loop autoplay muted></video>
+<video src="../../../assets/videos/flame-docs-A.mp4" playsinline loop autoplay muted></video>
 
-#### Tooltip buttons
+#### 工具提示按钮
 
-After single-clicking on a block, or hovering over it for a moment, a tooltip appears,
-with one or more buttons:
+在一个块上点击一次，或者在它上面悬停一会儿，一个工具提示出现，有一个或多个按钮:
 
-- **Expand**. [See below](#expanding) for more about expanding a particular block.
-- **Contract**. If this is the block that you have already expanded, it will show
-  "Contract" instead of "Expand", which will take you back to the main view.
-- **Copy path**. Copies to the clipboard the relative file path to the file
-  containing the code this block represents. This only appears for blocks
-  from the application being profiled (white) or its dependencies (blue).
-- **Open in browser**. For Node.js core blocks only (grey). In a new browser tab,
-  opens the GitHub page showing the source code for the Node.js function
-  represented by this block. Exploring these can be a good way to learn
-  more about what Node.js is doing "under the hood".
+- **Expand**. 关于扩展特定块的更多信息，请[参见下面]((#expanding)的。
+- **Contract**. 如果这是您已经展开的块，它将显示“Contract”而不是“Expand”，这将带您回到主视图。
+- **Copy path**. 将包含此块表示的代码的文件的相对文件路径复制到剪贴板。
+  这只出现在被分析的应用程序(白色)或它的依赖项(蓝色)中的块上。
+- **Open in browser**. 仅适用于 Node.js 核心块(灰色)。
+  在一个新的浏览器选项卡中，打开 GitHub 页面，其中显示了该块所表示的 Node.js 函数的源代码。
+  探索这些可能是了解更多 Node.js“底层”工作的好方法。
 
-<video src="/assets/videos/flame-docs-B.mp4" playsinline loop autoplay muted></video>
+<video src="../../../assets/videos/flame-docs-B.mp4" playsinline loop autoplay muted></video>
 
-#### Expanding
+#### 扩大
 
-When a block is double-clicked, or its tooltip "Expand" button is used,
-it will expand to fill the full width of the flamegraph.
-Blocks below will also expand and fill
-the full width, while blocks above the clicked block will
-increase in ratio to the block they sit on. Expanding a block
-essentially creates a new flamegraph which represents a particular
-partition of the main flamegraph.
+当一个块被双击，或者它的工具提示“扩展”按钮被使用时，它将扩展以填充火焰图的整个宽度。
+下面的块也将扩展并填充整个宽度，而点击块上方的块将增加其所在块的比例。
+扩展一个块实际上创建了一个新的火焰图，它代表主火焰图的一个特定分区。
 
-The block that has been expanded is marked with a shadow underneath.
-Every block below this 'shadow' is probably wider (longer on the CPU)
-than the block that has expanded to fill the screen.
+已扩展的块在下面用阴影标记。
+这个“阴影”下面的每个块可能比已经扩展到整个屏幕的块更宽(在 CPU 上更长)。
 
-To get back to the main, non-expanded view, you can either click on the
-background, click "Return to main view" at the bottom of the screen,
-double-click on the expanded frame, or click on its "Contract" tooltip button.
+要回到未展开的主视图，你可以点击背景，点击屏幕底部的“返回主视图”，
+双击展开的框架，或者点击它的“契约”工具提示按钮。
 
-<video src="/assets/videos/flame-docs-C.mp4" playsinline loop autoplay muted></video>
+<video src="../../../assets/videos/flame-docs-C.mp4" playsinline loop autoplay muted></video>
 
-## Info panel
+## 信息面板
 
-There are five main features in the Info Panel:
+在信息面板中有五个主要功能:
 
-- **Stack bar**: A thin bar showing the "hottest" blocks in order
-- **Selection controls**: Flick to the next hottest, previous, etc
-- **Code info**: Where the function behind the currently highlighted block comes from
-- **Search box**: For finding functions by name or path
-- **Options Menu**: More advanced features. This [Options Menu has its own section below](#options-menu)
+- **Stack bar**: 一个细条，按顺序显示“最热”的块
+- **Selection controls**: 轻弹到下一个最热的，以前的，等等
+- **Code info**: 当前高亮显示的块背后的功能来自哪里
+- **Search box**: 用于通过名称或路径查找函数
+- **Options Menu**: 更高级的功能。这个[选项菜单在下面有自己的部分](#options-menu)
 
-#### Stack Bar
+#### 堆栈吧
 
-We previously explained, in the [Flamegraphs](/documentation/flame/04-flamegraphs/) page,
-how it is useful to consider how much time a function was at the top of the stack,
-meaning the Node.js event loop was blocked as the CPU executes code within that
-function; and how this is represented by the brightness or "heat" of the colour
-of the exposed part of a block.
+我们之前在[火焰图](/documentation/flame/04-flamegraphs/)页面中解释过，
+考虑一个函数在栈顶的时间是多么有用，
+这意味着当 CPU 在该函数中执行代码时，Node.js 事件循环被阻塞;
+以及这是如何通过一个块的暴露部分的颜色的亮度或“热”来表示的。
 
-This bar shows you the heat of those exposed stack tops, of every block in the
-flamegraph, in order of heat i.e. in order of how long that block's function
-was blocking the event loop.
+这个柱状图显示了每个块的堆栈顶部的热量，按照热量的顺序，即按照块的函数阻塞事件循环的时间的顺序。
 
-You can run the cursor along this bar from left to right to see where these
-"hot" functions are on the main flamegraph, with the same interaction as above:
-hover to see info, click to select and show tooltip, double click to expand.
+您可以沿着此条从左到右运行光标，以查看这些“热”功能在主火焰图上的位置，与上面相同的交互:悬停查看信息，单击选择并显示工具提示，双击展开。
 
-The left-most (hottest) block is selected by default when a Clinic.js Flame profile
-is first opened.
+当第一次打开 Clinic.js Flame 配置文件时，默认选择最左边(最热)的块。
 
-<video src="/assets/videos/flame-docs-D.mp4" playsinline loop autoplay muted></video>
+<video src="../../../assets/videos/flame-docs-D.mp4" playsinline loop autoplay muted></video>
 
-#### Selection Controls
+#### 选择控制
 
-These buttons allow you to easily jump from the currently selected block, to the
-block that is one to the left or right of it in the hottness-ranking shown by
-the Stack Bar.
+这些按钮允许您轻松地从当前选择的块跳转到堆栈栏显示的热度排名中它的左边或右边的块。
 
-A good place to start with a Clinic.js Flame flamegraph, is to cycle through
-using the "Next hottest" button, and for each block it selects, think why that
-function might be spending so much time active. For example, it might be a slow
-function needing optimising, or it might be a function you know is fast, but
-when you look at what is below it in the flamegraph, you might discover
-that it is being called too many times (for example, it might be in a nested loop).
+从 Clinic.js Flame 火焰图开始是一个很好的地方，
+是循环使用“下一个最热”按钮，对于它选择的每个块，
+想想为什么这个函数会花这么多时间活动。
+例如，它可能是一个需要优化的慢函数，
+或者它可能是一个你知道很快的函数，
+但是，当您查看火焰图中它下面的内容时，您可能会发现它被调用了太多次(例如，它可能在嵌套循环中)。
 
-<video src="/assets/videos/flame-docs-E.mp4" playsinline loop autoplay muted></video>
+<video src="../../../assets/videos/flame-docs-E.mp4" playsinline loop autoplay muted></video>
 
-#### Code info
+#### 代码信息
 
-This gives you more complete information about the code behind the block that is
-currently highlighted.
+这将为您提供有关当前突出显示的块背后代码的更完整信息。
 
-- Function name (or equivalent) on the left. Anonymous functions are labelled
-  `(anonymous)`.
-- File path (or equivalent) in the middle, including line and column number (if
-  applicable).
-- Context. This tells you what category this block is (for example, dependency), and
-  may include additional information if certain
-  [advanced controls](/documentation/flame/09-advanced-controls/) are used.
+- 函数名(或等价的)在左边。匿名函数被标记为' (Anonymous) '。
+- 中间的文件路径(或同等内容)，包括行号和列号(如果适用)。
+- Context. 它告诉你这个块是什么类别(例如，依赖)，如果使用了某些[高级控件](/documentation/flame/09-advanced-controls/)，它可能包括额外的信息。
 
 ![Detail on flamegraph info box](05-A.png)
 
-#### Search box
+#### 搜索框
 
-If there is some particular file or function(s) you want to locate, you can type part
-of the function name, file path or equivalent here, and any matches will be highlighted,
-in the same colour used for text and outlines (white for code from the profiled
-application, blue from a dependencies, grey from Node.js itself).
+如果你想找到一些特定的文件或函数，你可以在这里输入函数名、文件路径或同等内容的一部分，任何匹配的都将被高亮显示，使用与文本和轮廓相同的颜色(白色来自被分析应用程序的代码，蓝色来自依赖项，灰色来自 Node.js 本身)。
 
-This can be useful if you've done such a good job optimizing an operation, you can
-no longer find it on the flamegraph!
+如果你已经做了很好的优化操作，你就不能再在火焰图上找到它了，这是很有用的!
 
 ![Flamegraph with a search for frames that contain "app"](05-B.png)
 
-If a function you know exists can't be found _anywhere_, even using search, it's possible
-it might have been inlined by V8: try searching again after turning off ["Merge" in
-the Options Menu](#advanced). For more on merging and inlined blocks, see the section
-["Merging and Unmerging" in Advanced Controls](/documentation/flame/09-advanced-controls/#merging-and-unmerging)
+如果你知道存在的函数在任何地方都找不到，即使使用搜索，它可能已经被 V8 内联了:在关闭["Merge” in the Options Menu](#advanced)后再试着搜索。
+有关合并和内联块的更多信息，请参阅[高级控件中的“合并和取消合并”](/documentation/flame/09-advanced-controls/#merging-and-unmerging)一节。
 
-If it is possible the function was so fast, or on the CPU for so little time, that it was
-never on the CPU while a sample was being taken, it might appear if you create a new profile
-with a [longer duration and/or more connections in Autocannon](https://www.npmjs.com/package/autocannon#usage).
+如果它是可能的功能是如此之快，或在 CPU 上的时间如此之少，它从来没有在 CPU 上，而一个样本正在采取，它可能会出现，如果你创建一个新的配置文件[更长时间和/或更多的连接在 Autocannon](https://www.npmjs.com/package/autocannon#usage)。
 
-## Options Menu
+## 选项菜单
 
-Clicking "Options" on the right side of the Info Panel opens a menu with
-more advanced options.
+点击信息面板右侧的“选项”将打开一个包含更多高级选项的菜单。
 
-#### Visibility by code area
+#### 按代码区域划分的可见性
 
-These toggle buttons show (tick) or hide (untick) blocks based on where the
-code is in the application or Node.js framework.
+这些切换按钮根据代码在应用程序或 Node.js 框架中的位置显示(打勾)或隐藏(不打勾)块。
 
-- **[Application name]**: Code inside the main package being profiled. Visible by default.
-- **Dependencies**: Code in a dependency in a `node_modules` directory. Visible by default.
-- **Node JS**: Code inside Node.js core. Visible by default.
-- **V8**: Functions inside the V8 JavaScript engine. Hidden by default, recommended for
-  advanced users only. [More info](/documentation/flame/09-advanced-controls/#v8)
+- **[Application name]**: 被分析的主包内的代码。默认是可见的。
+- **Dependencies**: ' node_modules '目录下依赖项中的代码。默认是可见的。
+- **Node JS**: 代码在 Node.js 核心。默认是可见的。
+- **V8**:V8 JavaScript 引擎内部的函数。默认隐藏，建议高级用户使用。 [More info](/documentation/flame/09-advanced-controls/#v8)
 
-#### Advanced
+#### 先进的
 
-- **Init**: Allows initialization functions to be shown that Flame hides by default.
-  [More info](/documentation/flame/09-advanced-controls/#init)
-- **Merge**: Allows different stacks to be shown for functions that V8 has optimised.
-  [More info](/documentation/flame/09-advanced-controls#merging-and-unmerging/).
+- **Init**: 允许初始化函数显示，Flame 默认隐藏。 [More info](/documentation/flame/09-advanced-controls/#init)
+- **Merge**: 允许为 V8 优化的函数显示不同的堆栈。 [More info](/documentation/flame/09-advanced-controls#merging-and-unmerging/).
 
-#### Preferences
+#### 首选项
 
-- **Presentation mode**: Increases text sizes and colour contrasts, which can be useful
-  if Clinic.js Flame is being presented under suboptimal conditions (e.g. on a projector in
-  a brightly lit room).
+- **Presentation mode**: 增加文本大小和颜色对比，这可能是有用的，如果 Clinic.js 火焰是在次优条件下呈现(例如在一个明亮的房间里的投影仪上)。
 
-Profiles can be set to show in Presentation Mode by default by
-setting the `PRESENTATION_MODE` environment variable to `TRUE`.
+通过将“PRESENTATION_MODE”环境变量设置为“TRUE”，可以将配置文件设置为默认以呈现模式显示。
 
-<video src="/assets/videos/flame-docs-F.mp4" playsinline loop autoplay muted></video>
+<video src="../../../assets/videos/flame-docs-F.mp4" playsinline loop autoplay muted></video>
 
 ---
 
-##### Up next
+## 下一个
 
-[Optimizing a hot function](/documentation/flame/06-optimizing-a-hot-function/)
+[优化热函数](/documentation/flame/06-optimizing-a-hot-function/)

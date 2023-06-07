@@ -14,20 +14,22 @@
       
         <link rel="canonical" href="https://wdk-docs.github.io/clinicjs-docs/documentation/flame/08-advanced-analysis/">
       
+      
+        <link rel="prev" href="../07-reducing-the-graph-size/">
+      
+      
+        <link rel="next" href="../09-advanced-controls/">
+      
       <link rel="icon" href="../../../assets/favicons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
-        <title>Advanced analysis - ClinicJS 文档</title>
+        <title>先进的分析 - ClinicJS 文档</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
-      
-        
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
-        
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.26e3688c.min.css">
       
       
 
@@ -55,14 +57,11 @@
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+    <body dir="ltr">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -70,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#advanced-analysis" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -84,7 +83,7 @@
 
   
 
-<header class="md-header md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../.." title="ClinicJS 文档" class="md-header__button md-logo" aria-label="ClinicJS 文档" data-md-component="logo">
       
@@ -104,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Advanced analysis
+              先进的分析
             
           </span>
         </div>
@@ -139,7 +138,7 @@
           <div class="md-search-result__meta">
             正在初始化搜索引擎
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -151,7 +150,7 @@
         <a href="https://github.com/wdk-docs/clinicjs-docs" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     wdk-docs/clinicjs-docs
@@ -164,7 +163,7 @@
     
       
 <nav class="md-tabs" aria-label="标签" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -296,7 +295,7 @@
       <a href="https://github.com/wdk-docs/clinicjs-docs" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     wdk-docs/clinicjs-docs
@@ -319,8 +318,9 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
       
       
         
@@ -336,8 +336,6 @@
         
           
         
-          
-            
           
         
       
@@ -353,7 +351,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="文档" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
           文档
@@ -371,8 +369,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
       
       
         
@@ -405,7 +404,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="医生" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_1_2">
           <span class="md-nav__icon md-icon"></span>
           医生
@@ -421,7 +420,7 @@
   
     <li class="md-nav__item">
       <a href="../../doctor/01-setup/" class="md-nav__link">
-        Setup
+        设置
       </a>
     </li>
   
@@ -435,7 +434,7 @@
   
     <li class="md-nav__item">
       <a href="../../doctor/02-getting-ready/" class="md-nav__link">
-        Getting ready
+        准备
       </a>
     </li>
   
@@ -449,7 +448,7 @@
   
     <li class="md-nav__item">
       <a href="../../doctor/03-first-analysis/" class="md-nav__link">
-        First analysis
+        首先分析
       </a>
     </li>
   
@@ -463,7 +462,7 @@
   
     <li class="md-nav__item">
       <a href="../../doctor/04-reading-a-profile/" class="md-nav__link">
-        Reading a profile
+        阅读数据图表
       </a>
     </li>
   
@@ -477,7 +476,7 @@
   
     <li class="md-nav__item">
       <a href="../../doctor/05-fixing-event-loop-problem/" class="md-nav__link">
-        Fixing an event loop problem
+        修复事件循环问题
       </a>
     </li>
   
@@ -491,7 +490,7 @@
   
     <li class="md-nav__item">
       <a href="../../doctor/06-fixing-io-problem/" class="md-nav__link">
-        Fixing an I/O problem
+        修复I/O问题
       </a>
     </li>
   
@@ -516,8 +515,9 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" checked>
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
       
       
         
@@ -556,7 +556,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="火焰图" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_1_3">
           <span class="md-nav__icon md-icon"></span>
           火焰图
@@ -572,7 +572,7 @@
   
     <li class="md-nav__item">
       <a href="../01-setup/" class="md-nav__link">
-        Setup
+        设置
       </a>
     </li>
   
@@ -586,7 +586,7 @@
   
     <li class="md-nav__item">
       <a href="../02-getting-ready/" class="md-nav__link">
-        Getting ready
+        准备
       </a>
     </li>
   
@@ -600,7 +600,7 @@
   
     <li class="md-nav__item">
       <a href="../03-first-analysis/" class="md-nav__link">
-        First analysis
+        分析
       </a>
     </li>
   
@@ -614,7 +614,7 @@
   
     <li class="md-nav__item">
       <a href="../04-flamegraphs/" class="md-nav__link">
-        Flamegraphs
+        火焰图
       </a>
     </li>
   
@@ -628,7 +628,7 @@
   
     <li class="md-nav__item">
       <a href="../05-controls/" class="md-nav__link">
-        Controls
+        控制器
       </a>
     </li>
   
@@ -642,7 +642,7 @@
   
     <li class="md-nav__item">
       <a href="../06-optimizing-a-hot-function/" class="md-nav__link">
-        Optimizing a hot function
+        优化热函数
       </a>
     </li>
   
@@ -655,8 +655,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../07-reducing-th-graph-size.md" class="md-nav__link">
-        None
+      <a href="../07-reducing-the-graph-size/" class="md-nav__link">
+        减小图的大小
       </a>
     </li>
   
@@ -672,19 +672,19 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Advanced analysis
+          先进的分析
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Advanced analysis
+        先进的分析
       </a>
       
         
@@ -703,8 +703,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#up-next" class="md-nav__link">
-    Up next
+  <a href="#_2" class="md-nav__link">
+    下一个
   </a>
   
 </li>
@@ -725,7 +725,7 @@
   
     <li class="md-nav__item">
       <a href="../09-advanced-controls/" class="md-nav__link">
-        Advanced controls
+        先进的控制
       </a>
     </li>
   
@@ -748,8 +748,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" >
       
       
         
@@ -788,7 +789,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Bubbleprof" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_1_4">
           <span class="md-nav__icon md-icon"></span>
           Bubbleprof
@@ -804,7 +805,7 @@
   
     <li class="md-nav__item">
       <a href="../../bubbleprof/01-setup/" class="md-nav__link">
-        Setup
+        配置
       </a>
     </li>
   
@@ -818,7 +819,7 @@
   
     <li class="md-nav__item">
       <a href="../../bubbleprof/02-getting-ready/" class="md-nav__link">
-        Getting ready
+        准备
       </a>
     </li>
   
@@ -832,7 +833,7 @@
   
     <li class="md-nav__item">
       <a href="../../bubbleprof/03-first-analysis/" class="md-nav__link">
-        First analysis
+        分析
       </a>
     </li>
   
@@ -846,7 +847,7 @@
   
     <li class="md-nav__item">
       <a href="../../bubbleprof/04-bubbles/" class="md-nav__link">
-        Bubbles
+        泡沫
       </a>
     </li>
   
@@ -860,7 +861,7 @@
   
     <li class="md-nav__item">
       <a href="../../bubbleprof/05-sidebar/" class="md-nav__link">
-        The sidebar
+        侧边栏
       </a>
     </li>
   
@@ -874,7 +875,7 @@
   
     <li class="md-nav__item">
       <a href="../../bubbleprof/06-finding-the-first-bottleneck/" class="md-nav__link">
-        Finding the first bottleneck
+        找到第一个瓶颈
       </a>
     </li>
   
@@ -888,7 +889,7 @@
   
     <li class="md-nav__item">
       <a href="../../bubbleprof/07-improving-our-latency/" class="md-nav__link">
-        Improving our latency
+        改善我们的延迟
       </a>
     </li>
   
@@ -902,7 +903,7 @@
   
     <li class="md-nav__item">
       <a href="../../bubbleprof/08-parallel-queries/" class="md-nav__link">
-        Parallel queries
+        并行查询
       </a>
     </li>
   
@@ -916,7 +917,7 @@
   
     <li class="md-nav__item">
       <a href="../../bubbleprof/09-caching-the-results/" class="md-nav__link">
-        Caching the results
+        缓存结果
       </a>
     </li>
   
@@ -939,8 +940,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
       
       
         
@@ -969,7 +971,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="CLI" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_1_5">
           <span class="md-nav__icon md-icon"></span>
           CLI
@@ -985,7 +987,7 @@
   
     <li class="md-nav__item">
       <a href="../../cli/01-simulating-load/" class="md-nav__link">
-        Simulating load
+        模拟负载
       </a>
     </li>
   
@@ -999,7 +1001,7 @@
   
     <li class="md-nav__item">
       <a href="../../cli/02-controlling-the-output/" class="md-nav__link">
-        Controlling the output
+        控制输出
       </a>
     </li>
   
@@ -1013,7 +1015,7 @@
   
     <li class="md-nav__item">
       <a href="../../cli/03-managing-samples/" class="md-nav__link">
-        Managing samples
+        管理样品
       </a>
     </li>
   
@@ -1027,7 +1029,7 @@
   
     <li class="md-nav__item">
       <a href="../../cli/04-reference/" class="md-nav__link">
-        Reference
+        命令参考
       </a>
     </li>
   
@@ -1046,10 +1048,124 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../heapprofiler/">堆分析器</a>
+          
+            <label for="__nav_1_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          堆分析器
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../heapprofiler/" class="md-nav__link">
-        堆分析器
+      <a href="../../heapprofiler/01-setup/" class="md-nav__link">
+        设置
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../heapprofiler/02-getting-ready/" class="md-nav__link">
+        准备
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../heapprofiler/03-first-analysis/" class="md-nav__link">
+        首先分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../heapprofiler/04-flamegraphs/" class="md-nav__link">
+        Flamegraphs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../heapprofiler/05-controls/" class="md-nav__link">
+        Controls
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1178,8 +1294,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#up-next" class="md-nav__link">
-    Up next
+  <a href="#_2" class="md-nav__link">
+    下一个
   </a>
   
 </li>
@@ -1198,99 +1314,70 @@
                 
                   
 
-  <a href="https://github.com/wdk-docs/clinicjs-docs/edit/master/content/documentation/flame/08-advanced-analysis.md" title="编辑此页" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
 
 
-<h1 id="advanced-analysis">Advanced analysis<a class="headerlink" href="#advanced-analysis" title="Permanent link">&para;</a></h1>
-<p>We still have some hot blocks in our latest flamegraph:</p>
+<h1 id="_1">先进的分析<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>在我们最新的火焰图中，我们仍然有一些热块:</p>
 <p><img alt="Flamegraph from node-clinic-flame-demo/3-server-with-reduced-call-graph.js" src="../07-A.png" /></p>
-<p>None of the hottest blocks refer to any of our code,
-but let's take a minute to think through what's happening.</p>
-<p>The hottest is <code>clearBuffer</code> in <code>_stream_writable.js</code>.
-This is part of Node core. Since the goal here isn't to begin
-optimizing Node core, let's look at the next hottest block:
-<code>handleRequest</code>.</p>
-<p>We can expand the <code>handleRequest</code> block to look
-something like the following:</p>
+<p>最热门的块都没有引用我们的任何代码，但是让我们花一分钟思考一下发生了什么。</p>
+<p>最热的是<code>_stream_writable.js</code>中的' clearBuffer '。
+这是 Node 核心的一部分。
+由于这里的目标不是开始优化 Node 核心，让我们看看下一个最热门的块:' handleRequest '。</p>
+<p>我们可以将' handleRequest '块展开如下所示:</p>
 <p><img alt="Flamegraph expanding Fastify's handleRequest function" src="../08-A.png" /></p>
-<p>Looking at the three hottest functions in this sub-view:</p>
+<p>看看这个子视图中最热门的三个函数:</p>
 <ol>
-<li>Node.js's <code>clearBuffer</code> is first and accounts for most of the time spent
-   inside <code>onSendEnd</code>. As discussed, optimizing that will probably be difficult.</li>
-<li>Second hottest is the Fastify function <code>handleRequest</code>, which has many children
-   so is clearly quite complex.</li>
-<li>Third is in our own <code>payload</code> function - but we've already optimized that.</li>
+<li>Node.js 的' clearBuffer '是第一个，占了' onSendEnd '内部花费的大部分时间。如前所述，对其进行优化可能很困难。</li>
+<li>第二热门的是 fasttify 函数' handleRequest '，它有许多子函数，因此显然非常复杂。</li>
+<li>第三个是我们自己的“有效载荷”功能，但我们已经对其进行了优化。</li>
 </ol>
-<p>So, why are we spending a long time inside <code>handleRequest</code>? If we click copy path
-to look at the Fastify code, there's nothing obviously wrong, and we know
-Fastify is quite well optimized for performance.</p>
-<p>Maybe something is missing? Let's open the Options menu and tick the
-unticked "V8" button, showing operations inside the V8 JavaScript
-engine that are normally hidden:</p>
+<p>为什么我们要在 handleRequest 里面花很长时间?
+如果我们单击 copy path 查看 Fastify 代码，没有什么明显的错误，而且我们知道 Fastify 在性能方面进行了很好的优化。</p>
+<p>也许是少了什么?让我们打开 Options 菜单并勾选未勾选的“V8”按钮，显示 V8 JavaScript 引擎内部通常隐藏的操作:</p>
 <p><img alt="Flamegraph showing V8 functions in Fastify's handleRequest" src="../08-B.png" /></p>
-<p>The gap almost completely disappears, and a new block appears (selected in the
-above screenshot), starting <code>T v8::internal::Builtin_JsonStringify</code>. This means
-it refers to a C++ function inside V8, named <code>Builtin_JsonStringify</code>. Clearly,
-this is related to <code>JSON.stringify()</code>.</p>
-<p>It's worth knowing that the JavaScript wrappers <code>JSON.stringify()</code> and
-<code>JSON.parse()</code> that we are familiar with are not sampled directly by V8, which
-instead skips straight to the underlying C++ implementation.</p>
-<p>Expand that, and we see V8 needs to do many, many steps when trying to
-stringify some JSON.</p>
+<p>间隙几乎完全消失，出现一个新的块(在上面的截图中选择)，开始' T v8::internal::Builtin_JsonStringify '。
+这意味着它指的是 V8 内部的一个 c++函数，名为“Builtin_JsonStringify”。显然，这与' JSON.stringify() '有关。</p>
+<p>值得知道的是，我们熟悉的 JavaScript 包装器' JSON.stringify() '和' JSON.parse() '并没有被 V8 直接采样，而是直接跳过底层的 c++实现。</p>
+<p>展开它，我们看到 V8 在尝试字符串化 JSON 时需要做很多很多的步骤。</p>
 <p><img alt="Flamegraph expanded on V8's Builtin_JsonStringify" src="../08-C.png" /></p>
-<p>This is a case where instead of focussing on one "hot" function, we need to focus
-on an inefficient parent function that is calling many micro-tasks. Each one looks
-pretty fast - the problem is, they add up to a lot of time.</p>
-<p>Why is JSON stringification happening here? It's because we send an object, and both
-Express and Fastify will automatically serialize an object passed to their <code>send</code> method.</p>
-<p>This bottleneck becomes a lot clearer when we turn off inlining.</p>
-<p>Let's run the following command:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a> clinic flame --on-port <span class="s1">&#39;autocannon localhost:$PORT&#39;</span> -- node --no-turbo-inlining <span class="m">3</span>-server-with-reduced-call-graph.js
+<p>在这种情况下，我们需要关注调用许多微任务的低效父函数，而不是关注一个“热门”函数。
+每一个看起来都很快——问题是，它们加起来要花很多时间。</p>
+<p>为什么这里会出现 JSON 字符串化?这是因为我们发送一个对象，Express 和 fasttify 都会自动序列化传递给它们的 send 方法的对象。</p>
+<p>当我们关闭内联时，这个瓶颈变得更加清晰。</p>
+<p>让我们运行以下命令:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="w"> </span>clinic<span class="w"> </span>flame<span class="w"> </span>--on-port<span class="w"> </span><span class="s1">&#39;autocannon localhost:$PORT&#39;</span><span class="w"> </span>--<span class="w"> </span>node<span class="w"> </span>--no-turbo-inlining<span class="w"> </span><span class="m">3</span>-server-with-reduced-call-graph.js
 </code></pre></div></td></tr></table></div>
-<p>This will produce a flamegraph similar to the following:</p>
+<p>这将产生类似以下的火焰图:</p>
 <p><img alt="Flamegraph of Fastify demo without inlining" src="../08-D.png" /></p>
-<p>We have a new second-hottest function (after the Node core one) - <code>serialize</code>.
-This was previously hidden due to being inlined by V8.</p>
-<p>With none of the functions inlining, it becomes a lot more apparent that
-the <code>serialize</code> function is a bottleneck. Whereas <em>with</em> inlining the hot
-blocks were seen more on the top of the stack <em>because</em> they represent
-several other functions that have also been inlined into them.</p>
-<p>The <code>4-server-with-manual-serialization.js</code> alters the line 23 in the <code>payload</code>
-function from <code>return {date, id}</code> to:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">return</span><span class="w"> </span><span class="sb">`{&quot;date&quot;: </span><span class="si">${</span><span class="nx">date</span><span class="si">}</span><span class="sb">, &quot;id&quot;: &quot;</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">&quot;}`</span><span class="w"></span>
+<p>我们有了一个新的第二热门的函数(仅次于 Node 的核心函数)——“serialize”。
+由于被 V8 内联，这在之前是隐藏的。</p>
+<p>由于这些函数都没有内联，因此“序列化”函数成为瓶颈的情况变得更加明显。
+然而，内联热块更多地出现在堆栈的顶部，因为它们代表了其他几个也被内联到它们中的函数。</p>
+<p>' 4-server-with-manual- serialize .js '将' payload '函数中的第 23 行从' return {date, id} '更改为:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">return</span><span class="w"> </span><span class="sb">`{&quot;date&quot;: </span><span class="si">${</span><span class="nx">date</span><span class="si">}</span><span class="sb">, &quot;id&quot;: &quot;</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">&quot;}`</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
-<p>It should be noted here that this technique may be inappropriate in many cases,
-for instance where escaping inputs is crucial to security. An alternative to
-manual serialization which is still faster than using <code>JSON.stringify</code> is
-schema-based serialization using <a href="http://npm.im/fast-json-stringify">fast-json-stringify</a>. The Fastify web framework also supports schema-based serialization by default,
-see <a href="https://github.com/fastify/fastify/blob/master/docs/Validation-and-Serialization.md#serialization">Fastify's Serialization
-Documentation</a>.</p>
-<p>Let's run Clinic.js Flame to create a flamegraph for <code>4-server-with-manual-serialization.js</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>clinic flame --on-port <span class="s1">&#39;autocannon localhost:$PORT&#39;</span> -- node <span class="m">4</span>-server-with-manual-serialization.js
+<p>这里应该指出，这种技术在许多情况下可能是不合适的，例如，在转义输入对安全性至关重要的情况下。
+手动序列化的另一种选择仍然比使用' JSON.stringify '更快，那就是使用<a href="http://npm.im/fast-json-stringify">fast-json-stringify</a>进行基于模式的序列化。
+Fastify web 框架也默认支持基于模式的序列化，参见<a href="https://github.com/fastify/fastify/blob/master/docs/Validation-and-Serialization.md#serialization">Fastify 的序列化文档</a>。</p>
+<p>让我们运行 Clinic.js Flame 为' 4-server-with-manual-serialization.js '创建一个火焰图:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>clinic<span class="w"> </span>flame<span class="w"> </span>--on-port<span class="w"> </span><span class="s1">&#39;autocannon localhost:$PORT&#39;</span><span class="w"> </span>--<span class="w"> </span>node<span class="w"> </span><span class="m">4</span>-server-with-manual-serialization.js
 </code></pre></div></td></tr></table></div>
-<p>This should give something like:</p>
+<p>这应该给出如下结果:</p>
 <p><img alt="Flamegraph of Fastify demo with manual inlining" src="../08-E.png" /></p>
-<p>We can see the the hottest block is a Node core function, <code>Socket._writeGeneric</code>,
-which is called by <code>clearBuffer</code>. It's same Node core bottleneck as before, it's just that
-in this sampling period the V8 engine <em>didn't</em> inline <code>Socket._writeGeneric</code> into
-<code>clearBuffer</code>.</p>
-<p>Let's use <code>autocannon</code> to determine the effect this has had on server performance:</p>
+<p>我们可以看到最热的块是一个 Node 核心函数，' Socket._writeGeneric '，它被' clearBuffer '调用。
+这和以前一样是 Node 核心瓶颈，只是在这个采样期间 V8 引擎没有内联 Socket。_writeGeneric '转换为' clearBuffer '。</p>
+<p>让我们使用“autocannon”来确定这对服务器性能的影响:</p>
 <p><img alt="Output from autocannon before and after using manual serialization" src="../08-F.png" /></p>
-<p>We've achieved roughly another 10% improvement.</p>
-<p>At this point further optimization of the application becomes increasingly challenging,
-since functions in Node core have become the primary bottleneck. A few more percent could
-be squeezed out here and there, especially if we were willing to change the constraints
-of the <code>id</code> field.</p>
-<p>However, for the most part, our work here is done.</p>
+<p>我们又实现了大约 10%的改进。</p>
+<p>此时，应用程序的进一步优化变得越来越具有挑战性，因为 Node 核心中的功能已经成为主要瓶颈。
+如果我们愿意改变“id”字段的约束条件，那么还可以在这里或那里挤出更多的百分比。</p>
+<p>不过，我们在这里的大部分工作已经完成了。</p>
 <hr />
-<h5 id="up-next">Up next<a class="headerlink" href="#up-next" title="Permanent link">&para;</a></h5>
-<p><strong>The walkthrough is complete.</strong> Congratulations! You should now be able to use
-Clinic.js Flame to solve common performance problems.</p>
-<p>You may also choose to continue to read about Flame's
-more <a href="/documentation/flame/09-advanced-controls/">advanced controls</a>.</p>
+<h2 id="_2">下一个<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><strong>演练已经完成。</strong> 恭喜你!现在你应该可以使用 Clinic.js Flame 来解决常见的性能问题了。</p>
+<p>您也可以选择继续阅读有关 Flame 的更多<a href="/documentation/flame/09-advanced-controls/">高级控制</a>.</p>
 
 
 
@@ -1303,50 +1390,14 @@ more <a href="/documentation/flame/09-advanced-controls/">advanced controls</a>.
           
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             回到页面顶部
-          </a>
+          </button>
         
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="页脚" >
-      
-        
-        <a href="../06-optimizing-a-hot-function/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Optimizing a hot function" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              Optimizing a hot function
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../09-advanced-controls/" class="md-footer__link md-footer__link--next" aria-label="下一页: Advanced controls" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              Advanced controls
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1368,32 +1419,44 @@ more <a href="/documentation/flame/09-advanced-controls/">advanced controls</a>.
   
     
     
+    
+    
     <a href="https://twitter.com/sindresorhus" target="_blank" rel="noopener" title="Sindre Sorhus Twitter" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
     </a>
   
+    
+    
     
     
     <a href="https://github.com/sindresorhus" target="_blank" rel="noopener" title="Sindre Sorhus Github" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
     </a>
   
+    
+    
     
     
     <a href="https://instagram.com/sindresorhus" target="_blank" rel="noopener" title="Sindre Sorhus Instagram" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
     </a>
   
+    
+    
     
     
     <a href="https://sindresorhus.com/apps" target="_blank" rel="noopener" title="Sindre Sorhus Blog" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M162.4 196c4.8-4.9 6.2-5.1 36.4-5.1 27.2 0 28.1.1 32.1 2.1 5.8 2.9 8.3 7 8.3 13.6 0 5.9-2.4 10-7.6 13.4-2.8 1.8-4.5 1.9-31.1 2.1-16.4.1-29.5-.2-31.5-.8-10.3-2.9-14.1-17.7-6.6-25.3zm61.4 94.5c-53.9 0-55.8.2-60.2 4.1-3.5 3.1-5.7 9.4-5.1 13.9.7 4.7 4.8 10.1 9.2 12 2.2 1 14.1 1.7 56.3 1.2l47.9-.6 9.2-1.5c9-5.1 10.5-17.4 3.1-24.4-5.3-4.7-5-4.7-60.4-4.7zm223.4 130.1c-3.5 28.4-23 50.4-51.1 57.5-7.2 1.8-9.7 1.9-172.9 1.8-157.8 0-165.9-.1-172-1.8-8.4-2.2-15.6-5.5-22.3-10-5.6-3.8-13.9-11.8-17-16.4-3.8-5.6-8.2-15.3-10-22C.1 423 0 420.3 0 256.3 0 93.2 0 89.7 1.8 82.6 8.1 57.9 27.7 39 53 33.4c7.3-1.6 332.1-1.9 340-.3 21.2 4.3 37.9 17.1 47.6 36.4 7.7 15.3 7-1.5 7.3 180.6.2 115.8 0 164.5-.7 170.5zm-85.4-185.2c-1.1-5-4.2-9.6-7.7-11.5-1.1-.6-8-1.3-15.5-1.7-12.4-.6-13.8-.8-17.8-3.1-6.2-3.6-7.9-7.6-8-18.3 0-20.4-8.5-39.4-25.3-56.5-12-12.2-25.3-20.5-40.6-25.1-3.6-1.1-11.8-1.5-39.2-1.8-42.9-.5-52.5.4-67.1 6.2-27 10.7-46.3 33.4-53.4 62.4-1.3 5.4-1.6 14.2-1.9 64.3-.4 62.8 0 72.1 4 84.5 9.7 30.7 37.1 53.4 64.6 58.4 9.2 1.7 122.2 2.1 133.7.5 20.1-2.7 35.9-10.8 50.7-25.9 10.7-10.9 17.4-22.8 21.8-38.5 3.2-10.9 2.9-88.4 1.7-93.9z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M162.4 196c4.8-4.9 6.2-5.1 36.4-5.1 27.2 0 28.1.1 32.1 2.1 5.8 2.9 8.3 7 8.3 13.6 0 5.9-2.4 10-7.6 13.4-2.8 1.8-4.5 1.9-31.1 2.1-16.4.1-29.5-.2-31.5-.8-10.3-2.9-14.1-17.7-6.6-25.3zm61.4 94.5c-53.9 0-55.8.2-60.2 4.1-3.5 3.1-5.7 9.4-5.1 13.9.7 4.7 4.8 10.1 9.2 12 2.2 1 14.1 1.7 56.3 1.2l47.9-.6 9.2-1.5c9-5.1 10.5-17.4 3.1-24.4-5.3-4.7-5-4.7-60.4-4.7zm223.4 130.1c-3.5 28.4-23 50.4-51.1 57.5-7.2 1.8-9.7 1.9-172.9 1.8-157.8 0-165.9-.1-172-1.8-8.4-2.2-15.6-5.5-22.3-10-5.6-3.8-13.9-11.8-17-16.4-3.8-5.6-8.2-15.3-10-22C.1 423 0 420.3 0 256.3 0 93.2 0 89.7 1.8 82.6 8.1 57.9 27.7 39 53 33.4c7.3-1.6 332.1-1.9 340-.3 21.2 4.3 37.9 17.1 47.6 36.4 7.7 15.3 7-1.5 7.3 180.6.2 115.8 0 164.5-.7 170.5zm-85.4-185.2c-1.1-5-4.2-9.6-7.7-11.5-1.1-.6-8-1.3-15.5-1.7-12.4-.6-13.8-.8-17.8-3.1-6.2-3.6-7.9-7.6-8-18.3 0-20.4-8.5-39.4-25.3-56.5-12-12.2-25.3-20.5-40.6-25.1-3.6-1.1-11.8-1.5-39.2-1.8-42.9-.5-52.5.4-67.1 6.2-27 10.7-46.3 33.4-53.4 62.4-1.3 5.4-1.6 14.2-1.9 64.3-.4 62.8 0 72.1 4 84.5 9.7 30.7 37.1 53.4 64.6 58.4 9.2 1.7 122.2 2.1 133.7.5 20.1-2.7 35.9-10.8 50.7-25.9 10.7-10.9 17.4-22.8 21.8-38.5 3.2-10.9 2.9-88.4 1.7-93.9z"/></svg>
     </a>
   
     
     
-    <a href="https://mastodon.social/@sindresorhus" target="_blank" rel="noopener" title="Sindre Sorhus Mastodon" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+      
+    
+    
+    
+    <a href="https://mastodon.social/@sindresorhus" target="_blank" rel="noopener me" title="Sindre Sorhus Mastodon" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
     </a>
   
 </div>
@@ -1407,12 +1470,11 @@ more <a href="/documentation/flame/09-advanced-controls/">advanced controls</a>.
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "navigation.indexes", "content.code.annotate", "navigation.top"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "navigation.indexes", "content.code.annotate", "navigation.top"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
-    
     
   </body>
 </html>

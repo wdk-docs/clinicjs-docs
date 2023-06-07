@@ -1,5 +1,5 @@
 ---
-title: 'Setup'
+title: "设置"
 priority: 1
 
 # SEO
@@ -10,23 +10,21 @@ metaData:
     - Documentation
 ---
 
-# Setup
+# 设置
 
-Flame is part of the Clinic.js suit of tools. To install Flame, simply install
-Clinic.js like so:
+Flame 是 Clinic.js 工具套装的一部分。要安装 Flame，只需像这样安装 Clinic.js:
 
 ```bash
 npm install -g clinic
 ```
 
-After installing, we can check if Flame has been installed with running the
-`clinic flame` command with the `--help` flag.
+安装后，我们可以运行带有 `--help` 标志的 `clinic flame` 命令来检查 Flame 是否已经安装。
 
 ```bash
 clinic flame --help
 ```
 
-It should print something similar to the following:
+它应该输出类似下面的内容:
 
 ```
 Clinic.js Flame - v3.6.0 (0x v4.7.2)
@@ -58,6 +56,6 @@ Flags
 
 ---
 
-##### Up next
+## 下一个
 
-[Getting ready](/documentation/flame/02-getting-ready/)
+[准备](/documentation/flame/02-getting-ready/)

@@ -1,5 +1,5 @@
 ---
-title: 'Setup'
+title: "设置"
 priority: 1
 
 # SEO
@@ -10,23 +10,22 @@ metaData:
     - Documentation
 ---
 
-# Setup
+# 设置
 
-Heap Profiler is part of the Clinic.js suit of tools. To install Heap Profiler, simply install
-Clinic.js like so:
+堆分析器是 Clinic.js 工具套装的一部分。
+要安装堆分析器，只需像这样安装 Clinic.js:
 
 ```bash
 npm install -g clinic
 ```
 
-After installing, we can check if HeapProfiler has been installed with running the
-`clinic heapprofiler` command with the `--help` flag.
+在安装之后，我们可以运行带有“——help”标志的“clinic HeapProfiler”命令来检查 HeapProfiler 是否已经安装。
 
 ```bash
 clinic heapprofiler --help
 ```
 
-It should print something similar to the following:
+它应该输出类似下面的内容:
 
 ```
 Clinic.js Heap Profiler - v3.0.0
@@ -77,6 +76,6 @@ Flags
 
 ---
 
-##### Up next
+## 下一个
 
-[Getting ready](/documentation/heapprofiler/02-getting-ready/)
+[准备](/documentation/heapprofiler/02-getting-ready/)

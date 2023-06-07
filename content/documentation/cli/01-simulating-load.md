@@ -9,19 +9,21 @@ metaData:
     - Documentation
 ---
 
-# Simulating load
+# 模拟负载
 
-If our app handles requests, simply pointing Clinic.js at it won't be particularly insightful when testing its performance, since there will be no load to monitor unless we're manually using the running app. One way around this is to simulate load using a benchmarking tool like [autocannon](https://github.com/mcollina/autocannon).
+如果我们的应用程序处理请求，在测试它的性能时，简单地将 Clinic.js 指向它并不会特别有洞察力，因为除非我们手动使用正在运行的应用程序，否则不会有负载需要监控。
+解决这个问题的一种方法是使用基准测试工具(如[autocannon](https://github.com/mcollina/autocannon))模拟负载。
 
-## Using autocannon
+## 使用 autocannon
 
-We can simulate load on our server with autocannon very easily using the `--autocannon` flag:
+我们可以很容易地使用`--autocannon`标志在我们的服务器上模拟负载:
 
 ```bash
 clinic doctor --autocannon [ 'localhost:$PORT' ] -- node server.js
 ```
 
-Clinic.js automatically replaces the value of `$PORT` with the actual port our server is listening to inside `server.js`. To make things even simpler, if we've set up our server to use the `PORT` environment variable for the application port, we can produce the same results as the above command like this:
+Clinic.js 会自动将`$PORT`的值替换为服务器在`server.js`中侦听的实际端口。
+为了使事情变得更简单，如果我们已经将服务器设置为使用`PORT`环境变量作为应用程序端口，我们可以产生与上述命令相同的结果，如下所示:
 
 ```bash
 clinic doctor --autocannon [ / ] -- node server.js
@@ -29,15 +31,16 @@ clinic doctor --autocannon [ / ] -- node server.js
 
 Here `/` is the same as `'localhost:$PORT'` inside the subargs: `[ ]`.
 
-_Be careful to ensure there is space after the opening and before the closing square bracket to ensure the subargs are parsed correctly._
+_小心确保在开始方括号之后和结束方括号之前有空格，以确保正确解析子参数。_
 
-### Common autocannon flags
+### 常见的自动标签
 
-All available flags can be seen in the [autocannon README](https://github.com/mcollina/autocannon#command-line), but some of the more common flags are documented below.
+所有可用的标志都可以在[autocannon README](https://github.com/mcollina/autocannon#command-line)中看到，但下面记录了一些更常见的标志。
 
-#### Connections
+#### 连接数
 
-By default, autocannon will set the number of concurrent connections to 10. To change this to 100 for example, we can set the `-c` or `--connections` flag as a subarg like so:
+默认情况下，autocannon 将并发连接数设置为 10。
+例如，要将其更改为 100，我们可以将`-c`或`——connections`标记设置为子参数，如下所示:
 
 ```bash
 clinic doctor --autocannon [ -c 100 / ] -- node server.js
@@ -45,43 +48,47 @@ clinic doctor --autocannon [ -c 100 / ] -- node server.js
 
 #### HTTP methods
 
-Let's say we have an API with a POST endpoint that we want to test and monitor, this is easily accomplished using the `-m` or `--method` flag as a subarg:
+假设我们有一个带有 POST 端点的 API，我们想要测试和监控，这很容易使用`-m`或`——method`标志作为子参数来完成:
 
 ```bash
 clinic doctor --autocannon [ -m POST /api/item ] -- node server.js
 ```
 
-That's probably not that helpful without sending some actual data in the body of the request though, so let's add some using the `-b` or `--body` flag as a subarg:
+如果没有在请求体中发送一些实际数据，这可能没有那么有用，所以让我们使用`-b`或`——body`标志作为子参数添加一些数据:
 
 ```bash
 clinic doctor --autocannon [ -m POST /api/item -b '{"my": "data"}' ] -- node server.js
 ```
 
-This could get a bit hard to manage with JSON strings or any other data type as part of the command, especially if we want to test different endpoints with different data sets or varying lengths. Handily autocannon supports using a local file to provide data for the request body, so with some JSON files we can simplify this load test with the `-i` flag like this:
+使用 JSON 字符串或任何其他数据类型作为命令的一部分，这可能有点难以管理，特别是如果我们想要使用不同的数据集或不同的长度测试不同的端点。
+autocannon 支持使用本地文件为请求体提供数据，所以对于一些 JSON 文件，我们可以使用`-i`标记简化负载测试，如下所示:
 
 ```bash
 clinic doctor --autocannon [ -m POST /api/item -i my-data.json ] -- node server.js
 ```
 
-Neat!
+干净!
 
-## Using our own command
+## 使用我们自己的命令
 
-For more control, we can point any custom command at our server by using the `--on-port` flag. With `autocannon` globally installed we can simulate load on our app like so:
+为了获得更多的控制，我们可以使用`——on-port`标志将任何自定义命令指向我们的服务器。
+全局安装`autocannon`后，我们可以在应用程序上模拟加载，如下所示:
 
 ```bash
 clinic doctor --on-port 'autocannon localhost:$PORT' -- node server.js
 ```
 
-Just like with the `--autocannon` flag, Clinic.js replaces the value of `$PORT` with the actual port our server is listening to inside `server.js`.
+就像使用`——autocannon`标志一样，Clinic.js 将`$PORT`的值替换为服务器在`server.js`中侦听的实际端口。
 
-The advantage of the `--on-port` flag is that it gives us the flexibility to use any command we like, including other benchmarking tools such as [wrk](https://github.com/wg/wrk). For example, a similar command as above with `wrk` globally installed would be:
+`——on-port`标志的优点是，它使我们能够灵活地使用我们喜欢的任何命令，包括其他基准测试工具，如[wrk](https://github.com/wg/wrk)。
+例如，在全局安装了`wrk`的情况下，类似的命令是:
 
 ```bash
 clinic doctor --on-port 'wrk http://localhost:$PORT' -- node server.js
 ```
 
-Clinic.js then simply monitors the performance of the application under simulated load and will generate a sample when the script running `--on-port` exits. Which script we use is entirely up to us, we might have some complicated test commands already in place as [NPM scripts](https://docs.npmjs.com/cli/run-script.html) so we could easily call one of those instead:
+然后，Clinic.js 简单地监视应用程序在模拟负载下的性能，并在运行`——on-port`的脚本退出时生成一个示例。
+我们使用哪个脚本完全取决于我们，我们可能已经有一些复杂的测试命令，如[NPM 脚本](https://docs.npmjs.com/cli/run-script.html)，所以我们可以很容易地调用其中一个:
 
 ```bash
 clinic doctor --on-port 'npm run load-test' -- node server.js
@@ -89,6 +96,6 @@ clinic doctor --on-port 'npm run load-test' -- node server.js
 
 ---
 
-##### Up next
+## 下一个
 
-[Controlling the output](/documentation/cli/02-controlling-the-output/)
+[控制输出](./02-controlling-the-output.md)

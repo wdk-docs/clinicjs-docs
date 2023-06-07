@@ -8,9 +8,9 @@ metaData:
     - Documentation
 ---
 
-# Fl火焰图ame
+# 火焰图
 
-如果你想快速开始理解火焰图并学习如何优化Node.js代码，那么这是一个很好的开始。
+如果你想快速开始理解火焰图并学习如何优化 Node.js 代码，那么这是一个很好的开始。
 
 1. [设置](./01-setup.md)
 2. [准备](./02-getting-ready.md)

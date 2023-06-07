@@ -1,5 +1,5 @@
 ---
-title: 'Bubbles'
+title: "泡沫"
 priority: 4
 
 # SEO
@@ -10,7 +10,7 @@ metaData:
     - Documentation
 ---
 
-# Bubbles
+# 泡沫
 
 Let's dive into what these mean and how to interpret them.
 
@@ -52,6 +52,6 @@ that these bubbles are executed in series.
 
 ---
 
-##### Up next
+## 下一个
 
 [Sidebar](/documentation/bubbleprof/05-sidebar/)

@@ -1,5 +1,5 @@
 ---
-title: 'Flamegraphs'
+title: "Flamegraphs"
 priority: 4
 
 # SEO
@@ -12,7 +12,7 @@ metaData:
 
 # Flamegraphs
 
-Let's take a look again at the flamegraph generated in the prior [First analysis](/documentation/heapprofiler/03-first-analysis/) step.
+Let's take a look again at the flamegraph generated in the prior [首先分析](/documentation/heapprofiler/03-first-analysis/) step.
 
 ![Example flamegraph from node-clinic-heap-profiler-demo](03.png)
 
@@ -32,13 +32,11 @@ Each block represents the invocations of one function, aggregated by the call st
 
 ![Example of how flamegraphs represent call stacks](04-A.png)
 
-
 ## How much memory was allocated by each function observed?
 
 The width of a block represents the amount of memory that the function allocated. In the box at top-right contain the allocation info of the selected function.
 
 ![Example how to check how much memory was allocated by a function](04-B.png)
-
 
 ## What are the functions that allocate more memory on the heap?
 
@@ -56,6 +54,6 @@ In the next chapter, we will see how to manage the UI to visualize only the mean
 
 ---
 
-##### Up next
+## 下一个
 
 [Controls](/documentation/heapprofiler/05-controls/)

@@ -1,5 +1,5 @@
 ---
-title: 'Finding the first bottleneck'
+title: "找到第一个瓶颈"
 priority: 6
 
 # SEO
@@ -10,7 +10,7 @@ metaData:
     - Documentation
 ---
 
-# Finding the first bottleneck
+# 找到第一个瓶颈
 
 ![First screen](03-A.png)
 
@@ -32,6 +32,6 @@ We can reduce this overhead by adding an index on the properties we use.
 
 ---
 
-##### Up next
+## 下一个
 
 [Improving our latency](/documentation/bubbleprof/07-improving-our-latency/)

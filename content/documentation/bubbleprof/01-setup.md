@@ -1,5 +1,5 @@
 ---
-title: 'Setup'
+title: "配置"
 priority: 1
 
 # SEO
@@ -10,21 +10,22 @@ metaData:
     - Documentation
 ---
 
-# Setup
+# 配置
 
-Bubbleprof is part of the Clinic.js suit of tools. To install Bubbleprof, simply install Clinic.js like so:
+Bubbleprof 是 `Clinic.js` 工具套装的一部分。
+要安装 Bubbleprof，只需像这样安装 `Clinic.js`:
 
 ```bash
 npm install -g clinic
 ```
 
-After installing, we can check if Bubbleprof has been installed by running the `clinic bubbleprof` command with the `--help` flag.
+在安装之后，我们可以通过运行带有`--help`标志的`clinic bubbleprof`命令来检查是否已经安装了 Bubbleprof。
 
 ```bash
 clinic bubbleprof --help
 ```
 
-It should print something similar to the following:
+它应该输出类似下面的内容:
 
 ```
 Clinic.js BubbleProf - v1.11.0
@@ -52,6 +53,6 @@ Flags
 
 ---
 
-##### Up next
+## 下一个
 
-[Getting ready](/documentation/bubbleprof/02-getting-ready/)
+[准备](/documentation/bubbleprof/02-getting-ready/)

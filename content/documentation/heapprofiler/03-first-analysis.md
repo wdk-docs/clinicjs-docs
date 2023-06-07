@@ -1,41 +1,40 @@
 ---
-title: 'First analysis'
+title: "首先分析"
 priority: 3
 
 # SEO
 metaData:
   titleParts:
-    - First analysis
+    - 首先分析
     - Heap
     - Documentation
 ---
 
-# First analysis
+# 首先分析
 
-Now we're ready to profile the application.
+现在我们已经准备好分析应用程序了。
 
-Let's try with the first server in the repository, `1-server-with-many-allocations.js`.
+让我们尝试使用存储库中的第一个服务器，' 1-server-with-many-allocations.js '。
 
-It contains an HTTP server, built using Fastify with a root route (`/`) that adds an integer to a global array in each request received.
+它包含一个 HTTP 服务器，使用 fasttify 构建，带有根路由(' / ')，在收到的每个请求中向全局数组添加一个整数。
 
-The server can be started with `node 1-server-with-many-allocations.js` and then accessed in the browser at http://localhost:3000/. If the landing page says
-"Hello World" then things are working!
+服务器可以通过' node 1-server-with-many-allocations.js '启动，然后在浏览器中通过 http://localhost:3000/访问。如果登陆页面显示“Hello World”，那么一切正常!
 
-Let's try and profile the server with Flame to see if we can find any bottlenecks.
+让我们尝试使用 Flame 对服务器进行分析，看看是否可以找到任何瓶颈。
 
-To do that we need a tool that can simulate sufficiently intense HTTP load.
+要做到这一点，我们需要一个工具，可以模拟足够强烈的 HTTP 负载。
 
-We suggest `autocannon` which is supported on Windows, Mac and Linux and is straightforward to use.
+我们建议使用“autocannon”，它支持 Windows、Mac 和 Linux，而且使用起来很简单。
 
-Let's install it from npm:
+让我们从 npm 安装它:
 
 ```bash
 npm install -g autocannon
 ```
 
-To run the analysis we want to run the server with HeapProfiler and when the server is ready, we want to send a ton of requests to it using `autocannon`.
+为了运行分析，我们希望使用 HeapProfiler 运行服务器，当服务器准备好时，我们希望使用“autocannon”向它发送大量请求。
 
-All that can be performed with a single command, which can be copied and pasted as-is:
+所有这些都可以用一个命令执行，可以原样复制和粘贴:
 
 ```bash
 clinic heapprofiler --autocannon [ / --method GET -d 120 ] -- node 1-server-with-many-allocations.js
@@ -48,18 +47,18 @@ Let's break this command down:
 - The `--autocannon` flag will execute the tool as soon as the server starts listening on a port sending tons of requests.
 - Everything after the double-dash (`--`) is the command which starts the server that we want to profile, in this case `node 1-server-with-many-allocations.js`.
 
-This one command runs three executables: the `clinic heapprofiler` parent executable, the `autocannon` executable, and the `node` executable.
+这个命令运行三个可执行文件:' clinic heapprofiler '父可执行文件，' autocannon '可执行文件和' node '可执行文件。
 
-Upon running the command, the process will be load tested for 120 seconds (as per the `-d 120` parameter), then the results be compiled into a single HTML file that should automatically open in the browser.
+运行该命令后，将对进程进行 120 秒的负载测试(根据' -d 120 '参数)，然后将结果编译成一个 HTML 文件，该文件应该在浏览器中自动打开。
 
-The resulting HTML should look similar to the following:
+生成的 HTML 应该类似于以下内容:
 
 ![Flamegraph screenshot](03.png)
 
-This is known as a Flamegraph.
+这就是所谓的火焰图。
 
 ---
 
-##### Up next
+## 下一个
 
 [Flamegraphs](/documentation/heapprofiler/04-flamegraphs)

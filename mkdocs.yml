@@ -156,7 +156,7 @@ nav:
           - ./documentation/flame/04-flamegraphs.md
           - ./documentation/flame/05-controls.md
           - ./documentation/flame/06-optimizing-a-hot-function.md
-          - ./documentation/flame/07-reducing-th-graph-size.md
+          - ./documentation/flame/07-reducing-the-graph-size.md
           - ./documentation/flame/08-advanced-analysis.md
           - ./documentation/flame/09-advanced-controls.md
       - Bubbleprof:
@@ -176,7 +176,13 @@ nav:
           - ./documentation/cli/02-controlling-the-output.md
           - ./documentation/cli/03-managing-samples.md
           - ./documentation/cli/04-reference.md
-      - 堆分析器: ./documentation/heapprofiler/index.md
+      - 堆分析器:
+          - ./documentation/heapprofiler/index.md
+          - ./documentation/heapprofiler/01-setup.md
+          - ./documentation/heapprofiler/02-getting-ready.md
+          - ./documentation/heapprofiler/03-first-analysis.md
+          - ./documentation/heapprofiler/04-flamegraphs.md
+          - ./documentation/heapprofiler/05-controls.md
   - 医生: ./doctor/index.md
   - 火焰图: ./flame/index.md
   - Bubbleprof: ./bubbleprof/index.md

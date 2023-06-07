@@ -1,5 +1,5 @@
 ---
-title: 'Advanced controls'
+title: "先进的控制"
 priority: 9
 
 # SEO
@@ -10,7 +10,7 @@ metaData:
     - Documentation
 ---
 
-# Advanced controls
+# 先进的控制
 
 This section provides further reference information on some of Clinic.js Flame's advanced features.
 

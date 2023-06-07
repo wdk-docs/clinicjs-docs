@@ -1,16 +1,16 @@
 ---
-title: 'First analysis'
+title: "分析"
 priority: 3
 
 # SEO
 metaData:
   titleParts:
-    - First analysis
+    - 首先分析
     - Bubbleprof
     - Documentation
 ---
 
-# First analysis
+# 分析
 
 Now we're ready to run an analysis. Let's try with the first server in the repo, `1-server-with-no-index.js`.
 It contains a small server that queries mongodb for the 5 newest and 5 oldest node modules.
@@ -55,6 +55,6 @@ First thought is probably something similar to "That's a lot of bubbles!".
 
 ---
 
-##### Up next
+## 下一个
 
 [Bubbles](/documentation/bubbleprof/04-bubbles/)

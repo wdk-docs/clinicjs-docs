@@ -1,5 +1,5 @@
 ---
-title: 'The sidebar'
+title: "侧边栏"
 priority: 5
 
 # SEO
@@ -10,7 +10,7 @@ metaData:
     - Documentation
 ---
 
-# The sidebar
+# 侧边栏
 
 So the bubbles show an overview on where time is spent. To get an idea on how much time is spent in general
 you can inspect the sidebar.
@@ -29,6 +29,6 @@ Timeline is very useful at examining throughput and that could give us a clue wh
 
 ---
 
-##### Up next
+## 下一个
 
 [Finding the first bottleneck](/documentation/bubbleprof/06-finding-the-first-bottleneck/)

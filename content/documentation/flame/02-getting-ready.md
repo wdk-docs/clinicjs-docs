@@ -1,21 +1,20 @@
 ---
-title: 'Getting ready'
+title: "准备"
 priority: 2
 
 # SEO
 metaData:
   titleParts:
-    - Getting ready
+    - 准备
     - Flame
     - Documentation
 ---
 
-# Getting ready
+# 准备
 
-Once we've installed `clinic` and verified that `clinic flame` is functioning
-we can profile an application.
+一旦我们安装了`clinic`，并验证了`clinic flame`的功能，我们可以分析一个应用程序。
 
-To try this out, let's clone and prepare the official Clinic.js Flame demo:
+为了进行试验，让我们克隆并准备官方的 Clinic.js Flame 演示:
 
 ```bash
 git clone https://github.com/clinicjs/node-clinic-flame-demo.git
@@ -23,11 +22,10 @@ cd node-clinic-flame-demo
 npm install
 ```
 
-While npm downloads the dependencies, check the [Readme](https://github.com/clinicjs/node-clinic-flame-demo),
-then we are ready to profile!
+当 npm 下载这些依赖时，请查看[Readme](https://github.com/clinicjs/node-clinic-flame-demo)，然后我们就可以开始分析了!
 
 ---
 
-##### Up next
+## 下一个
 
-[First analysis](/documentation/flame/03-first-analysis/)
+[首先分析](/documentation/flame/03-first-analysis/)

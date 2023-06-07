@@ -1,16 +1,16 @@
 ---
-title: 'Getting ready'
+title: "准备"
 priority: 2
 
 # SEO
 metaData:
   titleParts:
-    - Getting ready
+    - 准备
     - Bubbleprof
     - Documentation
 ---
 
-# Getting ready
+# 准备
 
 Great, now we are ready to start profiling. To start profiling we find need a server of some sorts that does some async operations to get started. To keep things simple let's use our "official" Bubbleprof example that evolves around optimising a server that queries a mongodb containing npm metadata data.
 
@@ -22,6 +22,6 @@ If you read the example README, it will contain some instructions on how to get 
 
 ---
 
-##### Up next
+## 下一个
 
-[First analysis](/documentation/bubbleprof/03-first-analysis/)
+[首先分析](/documentation/bubbleprof/03-first-analysis/)

@@ -1,18 +1,18 @@
 ---
-title: '准备'
+title: "准备"
 priority: 2
 
 # SEO
 metaData:
   titleParts:
-    - Getting ready
+    - 准备
     - Doctor
     - Documentation
 ---
 
 # 准备
 
-我们需要一些使用Doctor的示例应用程序。
+我们需要一些使用 Doctor 的示例应用程序。
 Repo [`node-clinic-doctor-examples`](https://github.com/clinicjs/node-clinic-doctor-examples)包含几个供我们探索。
 让我们运行以下命令来克隆存储库并安装它的依赖项:
 
@@ -26,6 +26,6 @@ npm install
 
 ---
 
-##### 下一个
+## 下一个
 
 [先分析](/documentation/doctor/03-first-analysis/)

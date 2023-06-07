@@ -1,5 +1,5 @@
 ---
-title: 'Parallel queries'
+title: "并行查询"
 priority: 8
 
 # SEO
@@ -10,7 +10,7 @@ metaData:
     - Documentation
 ---
 
-# Parallel queries
+# 并行查询
 
 The third example, `3-server-with-index-in-parallel.js` is similar to second example, but executes the queries
 in parallel. Let's profile it again.
@@ -36,6 +36,6 @@ have to do fewer things with the database.
 
 ---
 
-##### Up next
+## 下一个
 
 [Caching the results](/documentation/bubbleprof/09-caching-the-results/)

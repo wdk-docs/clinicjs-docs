@@ -1,5 +1,5 @@
 ---
-title: 'Controls'
+title: "Controls"
 priority: 5
 
 # SEO
@@ -31,7 +31,7 @@ block when you are no longer hovering over anything.
 If you find an interesting-looking block, it can be useful to click on it
 so you can hover around exploring its neighbours without losing it.
 
-<video src="/assets/videos/heap-docs-A.mp4" playsinline loop autoplay muted></video>
+<video src="../../../assets/videos/heap-docs-A.mp4" playsinline loop autoplay muted></video>
 
 #### Tooltip buttons
 
@@ -60,7 +60,7 @@ To get back to the main, non-expanded view, you can either click on the
 background, click "Return to main view" at the bottom of the screen,
 double-click on the expanded frame, or click on its "Contract" tooltip button.
 
-<video src="/assets/videos/heap-docs-B.mp4" playsinline loop autoplay muted></video>
+<video src="../../../assets/videos/heap-docs-B.mp4" playsinline loop autoplay muted></video>
 
 ## Allocation Info
 
@@ -89,7 +89,7 @@ hover to see info, click to select and show tooltip, double click to expand.
 The left-most (hottest) block is selected by default when a Clinic.js Heap profile
 is first opened.
 
-<video src="/assets/videos/heap-docs-C.mp4" playsinline loop autoplay muted></video>
+<video src="../../../assets/videos/heap-docs-C.mp4" playsinline loop autoplay muted></video>
 
 #### Selection Controls
 
@@ -104,7 +104,7 @@ function wasting unnecessary resources, or it might be a function you know that 
 when you look at what is below it in the flamegraph, you might discover
 that it is being called too many times (for example, it might be in a nested loop).
 
-<video src="/assets/videos/heap-docs-D.mp4" playsinline loop autoplay muted></video>
+<video src="../../../assets/videos/heap-docs-D.mp4" playsinline loop autoplay muted></video>
 
 #### Code info
 
@@ -159,6 +159,6 @@ code is in the application or Node.js framework.
 Profiles can be set to show in Presentation Mode by default by
 setting the `PRESENTATION_MODE` environment variable to `TRUE`.
 
-<video src="/assets/videos/heap-docs-E.mp4" playsinline loop autoplay muted></video>
+<video src="../../../assets/videos/heap-docs-E.mp4" playsinline loop autoplay muted></video>
 
 ---

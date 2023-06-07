@@ -1,5 +1,5 @@
 ---
-title: 'Caching the results'
+title: "缓存结果"
 priority: 9
 
 # SEO
@@ -10,7 +10,7 @@ metaData:
     - Documentation
 ---
 
-# Caching the results
+# 缓存结果
 
 A way to do that would be to add caching. Our result seldomly changes so caching it in an LRU cache
 would be a great way to reduce the amount of database queries done in total.

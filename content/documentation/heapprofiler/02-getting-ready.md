@@ -1,21 +1,20 @@
 ---
-title: 'Getting ready'
+title: "准备"
 priority: 2
 
 # SEO
 metaData:
   titleParts:
-    - Getting ready
+    - 准备
     - Heap
     - Documentation
 ---
 
-# Getting ready
+# 准备
 
-Once we've installed `clinic` and verified that `clinic heapprofiler` is functioning
-we can profile an application.
+一旦我们安装了“clinic”并验证了“clinic heapprofiler”的功能，我们就可以分析应用程序了。
 
-To try this out, let's clone and prepare the official Clinic.js Heap Profiler demo:
+为了进行测试，让我们克隆并准备官方的 Clinic.js 堆分析器演示:
 
 ```bash
 git clone https://github.com/clinicjs/node-clinic-heap-profiler-demo.git
@@ -23,11 +22,10 @@ cd node-clinic-heap-profiler-demo
 npm install
 ```
 
-While npm downloads the dependencies, check the [Readme](https://github.com/clinicjs/node-clinic-heap-profiler-demo),
-then we are ready to profile!
+当 npm 下载这些依赖时，请查看[Readme](https://github.com/clinicjs/node-clinic-heap-profiler-demo)，然后我们就可以开始分析了!
 
 ---
 
-##### Up next
+## 下一个
 
-[First analysis](/documentation/heapprofiler/03-first-analysis/)
+[首先分析](/documentation/heapprofiler/03-first-analysis/)

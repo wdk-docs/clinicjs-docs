@@ -14,20 +14,22 @@
       
         <link rel="canonical" href="https://wdk-docs.github.io/clinicjs-docs/documentation/doctor/04-reading-a-profile/">
       
+      
+        <link rel="prev" href="../03-first-analysis/">
+      
+      
+        <link rel="next" href="../05-fixing-event-loop-problem/">
+      
       <link rel="icon" href="../../../assets/favicons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
-        <title>Reading a profile - ClinicJS 文档</title>
+        <title>阅读数据图表 - ClinicJS 文档</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
-      
-        
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
-        
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.26e3688c.min.css">
       
       
 
@@ -55,14 +57,11 @@
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+    <body dir="ltr">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -70,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reading-a-profile" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -84,7 +83,7 @@
 
   
 
-<header class="md-header md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../.." title="ClinicJS 文档" class="md-header__button md-logo" aria-label="ClinicJS 文档" data-md-component="logo">
       
@@ -104,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Reading a profile
+              阅读数据图表
             
           </span>
         </div>
@@ -139,7 +138,7 @@
           <div class="md-search-result__meta">
             正在初始化搜索引擎
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -151,7 +150,7 @@
         <a href="https://github.com/wdk-docs/clinicjs-docs" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     wdk-docs/clinicjs-docs
@@ -164,7 +163,7 @@
     
       
 <nav class="md-tabs" aria-label="标签" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -296,7 +295,7 @@
       <a href="https://github.com/wdk-docs/clinicjs-docs" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     wdk-docs/clinicjs-docs
@@ -319,8 +318,9 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
       
       
         
@@ -336,8 +336,6 @@
         
           
         
-          
-            
           
         
       
@@ -353,7 +351,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="文档" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
           文档
@@ -373,8 +371,9 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" checked>
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" checked>
       
       
         
@@ -407,7 +406,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="医生" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_1_2">
           <span class="md-nav__icon md-icon"></span>
           医生
@@ -423,7 +422,7 @@
   
     <li class="md-nav__item">
       <a href="../01-setup/" class="md-nav__link">
-        Setup
+        设置
       </a>
     </li>
   
@@ -437,7 +436,7 @@
   
     <li class="md-nav__item">
       <a href="../02-getting-ready/" class="md-nav__link">
-        Getting ready
+        准备
       </a>
     </li>
   
@@ -451,7 +450,7 @@
   
     <li class="md-nav__item">
       <a href="../03-first-analysis/" class="md-nav__link">
-        First analysis
+        首先分析
       </a>
     </li>
   
@@ -467,19 +466,19 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Reading a profile
+          阅读数据图表
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Reading a profile
+        阅读数据图表
       </a>
       
         
@@ -498,16 +497,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#alert-bar" class="md-nav__link">
-    Alert Bar
+  <a href="#_2" class="md-nav__link">
+    警报栏
   </a>
   
-    <nav class="md-nav" aria-label="Alert Bar">
+    <nav class="md-nav" aria-label="警报栏">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#view-controls" class="md-nav__link">
-    View controls
+  <a href="#_3" class="md-nav__link">
+    视图控制器
   </a>
   
 </li>
@@ -518,11 +517,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#graphs" class="md-nav__link">
-    Graphs
+  <a href="#_4" class="md-nav__link">
+    图表
   </a>
   
-    <nav class="md-nav" aria-label="Graphs">
+    <nav class="md-nav" aria-label="图表">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -559,31 +558,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommendations-panel" class="md-nav__link">
-    Recommendations Panel
+  <a href="#_5" class="md-nav__link">
+    建议面板
   </a>
   
-    <nav class="md-nav" aria-label="Recommendations Panel">
+    <nav class="md-nav" aria-label="建议面板">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#recommendations-summary" class="md-nav__link">
-    Recommendations Summary
+  <a href="#_6" class="md-nav__link">
+    建议总结
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#recommendation-in-detail" class="md-nav__link">
-    Recommendation in Detail
-  </a>
-  
-    <nav class="md-nav" aria-label="Recommendation in Detail">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#up-next" class="md-nav__link">
-    Up next
+  <a href="#_7" class="md-nav__link">
+    详细建议
   </a>
   
 </li>
@@ -592,9 +583,11 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    下一个
+  </a>
   
 </li>
       
@@ -614,7 +607,7 @@
   
     <li class="md-nav__item">
       <a href="../05-fixing-event-loop-problem/" class="md-nav__link">
-        Fixing an event loop problem
+        修复事件循环问题
       </a>
     </li>
   
@@ -628,7 +621,7 @@
   
     <li class="md-nav__item">
       <a href="../06-fixing-io-problem/" class="md-nav__link">
-        Fixing an I/O problem
+        修复I/O问题
       </a>
     </li>
   
@@ -651,8 +644,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
       
       
         
@@ -691,7 +685,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="火焰图" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_1_3">
           <span class="md-nav__icon md-icon"></span>
           火焰图
@@ -707,7 +701,7 @@
   
     <li class="md-nav__item">
       <a href="../../flame/01-setup/" class="md-nav__link">
-        Setup
+        设置
       </a>
     </li>
   
@@ -721,7 +715,7 @@
   
     <li class="md-nav__item">
       <a href="../../flame/02-getting-ready/" class="md-nav__link">
-        Getting ready
+        准备
       </a>
     </li>
   
@@ -735,7 +729,7 @@
   
     <li class="md-nav__item">
       <a href="../../flame/03-first-analysis/" class="md-nav__link">
-        First analysis
+        分析
       </a>
     </li>
   
@@ -749,7 +743,7 @@
   
     <li class="md-nav__item">
       <a href="../../flame/04-flamegraphs/" class="md-nav__link">
-        Flamegraphs
+        火焰图
       </a>
     </li>
   
@@ -763,7 +757,7 @@
   
     <li class="md-nav__item">
       <a href="../../flame/05-controls/" class="md-nav__link">
-        Controls
+        控制器
       </a>
     </li>
   
@@ -777,7 +771,7 @@
   
     <li class="md-nav__item">
       <a href="../../flame/06-optimizing-a-hot-function/" class="md-nav__link">
-        Optimizing a hot function
+        优化热函数
       </a>
     </li>
   
@@ -790,8 +784,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../flame/07-reducing-th-graph-size.md" class="md-nav__link">
-        None
+      <a href="../../flame/07-reducing-the-graph-size/" class="md-nav__link">
+        减小图的大小
       </a>
     </li>
   
@@ -805,7 +799,7 @@
   
     <li class="md-nav__item">
       <a href="../../flame/08-advanced-analysis/" class="md-nav__link">
-        Advanced analysis
+        先进的分析
       </a>
     </li>
   
@@ -819,7 +813,7 @@
   
     <li class="md-nav__item">
       <a href="../../flame/09-advanced-controls/" class="md-nav__link">
-        Advanced controls
+        先进的控制
       </a>
     </li>
   
@@ -842,8 +836,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" >
       
       
         
@@ -882,7 +877,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Bubbleprof" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_1_4">
           <span class="md-nav__icon md-icon"></span>
           Bubbleprof
@@ -898,7 +893,7 @@
   
     <li class="md-nav__item">
       <a href="../../bubbleprof/01-setup/" class="md-nav__link">
-        Setup
+        配置
       </a>
     </li>
   
@@ -912,7 +907,7 @@
   
     <li class="md-nav__item">
       <a href="../../bubbleprof/02-getting-ready/" class="md-nav__link">
-        Getting ready
+        准备
       </a>
     </li>
   
@@ -926,7 +921,7 @@
   
     <li class="md-nav__item">
       <a href="../../bubbleprof/03-first-analysis/" class="md-nav__link">
-        First analysis
+        分析
       </a>
     </li>
   
@@ -940,7 +935,7 @@
   
     <li class="md-nav__item">
       <a href="../../bubbleprof/04-bubbles/" class="md-nav__link">
-        Bubbles
+        泡沫
       </a>
     </li>
   
@@ -954,7 +949,7 @@
   
     <li class="md-nav__item">
       <a href="../../bubbleprof/05-sidebar/" class="md-nav__link">
-        The sidebar
+        侧边栏
       </a>
     </li>
   
@@ -968,7 +963,7 @@
   
     <li class="md-nav__item">
       <a href="../../bubbleprof/06-finding-the-first-bottleneck/" class="md-nav__link">
-        Finding the first bottleneck
+        找到第一个瓶颈
       </a>
     </li>
   
@@ -982,7 +977,7 @@
   
     <li class="md-nav__item">
       <a href="../../bubbleprof/07-improving-our-latency/" class="md-nav__link">
-        Improving our latency
+        改善我们的延迟
       </a>
     </li>
   
@@ -996,7 +991,7 @@
   
     <li class="md-nav__item">
       <a href="../../bubbleprof/08-parallel-queries/" class="md-nav__link">
-        Parallel queries
+        并行查询
       </a>
     </li>
   
@@ -1010,7 +1005,7 @@
   
     <li class="md-nav__item">
       <a href="../../bubbleprof/09-caching-the-results/" class="md-nav__link">
-        Caching the results
+        缓存结果
       </a>
     </li>
   
@@ -1033,8 +1028,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
       
       
         
@@ -1063,7 +1059,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="CLI" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_1_5">
           <span class="md-nav__icon md-icon"></span>
           CLI
@@ -1079,7 +1075,7 @@
   
     <li class="md-nav__item">
       <a href="../../cli/01-simulating-load/" class="md-nav__link">
-        Simulating load
+        模拟负载
       </a>
     </li>
   
@@ -1093,7 +1089,7 @@
   
     <li class="md-nav__item">
       <a href="../../cli/02-controlling-the-output/" class="md-nav__link">
-        Controlling the output
+        控制输出
       </a>
     </li>
   
@@ -1107,7 +1103,7 @@
   
     <li class="md-nav__item">
       <a href="../../cli/03-managing-samples/" class="md-nav__link">
-        Managing samples
+        管理样品
       </a>
     </li>
   
@@ -1121,7 +1117,7 @@
   
     <li class="md-nav__item">
       <a href="../../cli/04-reference/" class="md-nav__link">
-        Reference
+        命令参考
       </a>
     </li>
   
@@ -1140,10 +1136,124 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../heapprofiler/">堆分析器</a>
+          
+            <label for="__nav_1_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          堆分析器
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../heapprofiler/" class="md-nav__link">
-        堆分析器
+      <a href="../../heapprofiler/01-setup/" class="md-nav__link">
+        设置
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../heapprofiler/02-getting-ready/" class="md-nav__link">
+        准备
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../heapprofiler/03-first-analysis/" class="md-nav__link">
+        首先分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../heapprofiler/04-flamegraphs/" class="md-nav__link">
+        Flamegraphs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../heapprofiler/05-controls/" class="md-nav__link">
+        Controls
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1272,16 +1382,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#alert-bar" class="md-nav__link">
-    Alert Bar
+  <a href="#_2" class="md-nav__link">
+    警报栏
   </a>
   
-    <nav class="md-nav" aria-label="Alert Bar">
+    <nav class="md-nav" aria-label="警报栏">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#view-controls" class="md-nav__link">
-    View controls
+  <a href="#_3" class="md-nav__link">
+    视图控制器
   </a>
   
 </li>
@@ -1292,11 +1402,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#graphs" class="md-nav__link">
-    Graphs
+  <a href="#_4" class="md-nav__link">
+    图表
   </a>
   
-    <nav class="md-nav" aria-label="Graphs">
+    <nav class="md-nav" aria-label="图表">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1333,31 +1443,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommendations-panel" class="md-nav__link">
-    Recommendations Panel
+  <a href="#_5" class="md-nav__link">
+    建议面板
   </a>
   
-    <nav class="md-nav" aria-label="Recommendations Panel">
+    <nav class="md-nav" aria-label="建议面板">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#recommendations-summary" class="md-nav__link">
-    Recommendations Summary
+  <a href="#_6" class="md-nav__link">
+    建议总结
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#recommendation-in-detail" class="md-nav__link">
-    Recommendation in Detail
-  </a>
-  
-    <nav class="md-nav" aria-label="Recommendation in Detail">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#up-next" class="md-nav__link">
-    Up next
+  <a href="#_7" class="md-nav__link">
+    详细建议
   </a>
   
 </li>
@@ -1366,9 +1468,11 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    下一个
+  </a>
   
 </li>
       
@@ -1386,200 +1490,156 @@
                 
                   
 
-  <a href="https://github.com/wdk-docs/clinicjs-docs/edit/master/content/documentation/doctor/04-reading-a-profile.md" title="编辑此页" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
 
 
-<h1 id="reading-a-profile">Reading a profile<a class="headerlink" href="#reading-a-profile" title="Permanent link">&para;</a></h1>
-<p>The Clinic.js Doctor profile has three main sections:</p>
+<h1 id="_1">阅读数据图表<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>Clinic.js 的 Doctor 数据图表文件有三个主要部分:</p>
 <ul>
-<li><strong>Alert Bar</strong>: Points us towards the main problem, if there is one. Also contains <strong>View Controls</strong>.</li>
-<li><strong>Graphs</strong>: Plot the data from which Doctor is drawing its conclusions</li>
-<li><strong>Recommendations Panel</strong>: Detailed explanation of the problem with next steps</li>
+<li><strong>警报栏</strong>: 指出了我们的主要问题，如果有的话。 还包含 <strong>View Controls</strong>.</li>
+<li><strong>图表</strong>: 把医生得出结论的数据画出来</li>
+<li><strong>推荐面板</strong>: 对问题的详细解释和后续步骤</li>
 </ul>
-<h2 id="alert-bar">Alert Bar<a class="headerlink" href="#alert-bar" title="Permanent link">&para;</a></h2>
-<p><img alt="Doctor Alert Bar - closed" src="../04-A.png" /></p>
-<p>Click on this to open it out, and we see a one-line summary of the main problem, if
-there is one. Hover over this summary and it will underline the title of the specific
-graph that Doctor thinks is most relevant to understanding the problem.</p>
-<p>Doctor does not generally identify more than one issue, so there will generally be either one
-problem here, or a note that no problems were found. This is because one performance problem
-can disrupt the data needed to diagnose another problem. For example, if Doctor is sure there
-is an event loop problem, it might not be able to take enough readings to judge if there
-is an I/O problem.</p>
-<p>A first-time user will mainly use the Alert Bar to see if there is a detected problem or not,
-before going straight to the description in the Recommendations Panel to understand it better.
-A more experienced user will recognise common detected problems and then study the appropriate
-graphs for clues about how this particular example of the problem is manefesting itself.</p>
-<p>In the above example, Doctor is telling us that it has detected a problem, and the problem is
-"a potential Event Loop issue", which can be seen in the Event Loop Delay graph:</p>
-<p><img alt="Doctor Alert Bar - open, indicating a graph" src="../04-B.png" /></p>
-<h4 id="view-controls">View controls<a class="headerlink" href="#view-controls" title="Permanent link">&para;</a></h4>
-<p>To the right of the Alert Bar there are two buttons to change the view:</p>
+<h2 id="_2">警报栏<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><img alt="医生警报栏 - closed" src="../04-A.png" /></p>
+<p>点击这个打开它，我们会看到主要问题的一行摘要(如果有的话)。
+将鼠标悬停在这个摘要上，它会在医生认为与理解问题最相关的特定图表的标题下划下划线。</p>
+<p>医生通常不会识别多个问题，所以这里通常会有一个问题，或者没有发现问题的注释。
+这是因为一个性能问题可能会破坏诊断另一个问题所需的数据。
+例如，如果 Doctor 确定存在事件循环问题，它可能无法获取足够的读数来判断是否存在 I/O 问题。</p>
+<p>第一次使用的用户将主要使用警告栏来查看是否存在检测到的问题，然后直接进入建议面板中的描述以更好地理解它。
+更有经验的用户会识别到常见的检测到的问题，然后研究适当的图表，以寻找有关这个特定问题示例如何表现自身的线索。</p>
+<p>在上面的例子中，Doctor 告诉我们它检测到一个问题，这个问题是“一个潜在的事件循环问题”，可以在事件循环延迟图中看到:</p>
+<p><img alt="医生警报栏 - 打开，表示一个图形" src="../04-B.png" /></p>
+<h4 id="_3">视图控制器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>在警报栏的右边有两个按钮可以改变视图:</p>
 <ul>
-<li><img src="/assets/images/doctor-docs-04-C.png" alt="Grid icon" style="vertical-align: bottom;" /> <strong>Grid
-  View / List View.</strong> By default, Doctor shows all graphs in a grid so they can all be seen on the screen
-  at once. This button switches to a List View where each graph takes the full width of the screen.
-  This can be useful for advanced users who might want to study the detail of the graphs.
-  When in List View, clicking on the problem described in the Alert Bar scrolls
-  the page down to the most relevant graph, if it is not in view.</li>
+<li><img src="../../../assets/images/doctor-docs-04-C.png" alt="Grid icon" style="vertical-align: bottom;" /> <strong>Grid
+  View / List View.</strong>
+  默认情况下，Doctor 在一个网格中显示所有图形，这样它们就可以同时在屏幕上看到。
+  此按钮切换到列表视图，其中每个图形占用屏幕的整个宽度。
+  这对于想要研究图形细节的高级用户非常有用。
+  在列表视图中，单击警告栏中描述的问题，将页面向下滚动到最相关的图形(如果它不在视图中)。</li>
 </ul>
 <p><img alt="Doctor profile in List View" src="../04-E.png" /></p>
 <ul>
-<li><img src="/assets/images/doctor-docs-04-D.png" alt="Eye icon" style="vertical-align: bottom;" /> <strong>Light
-  Theme / Dark Theme.</strong> By default, Doctor uses a theme with a dark background and light text. This is
-  good for reducing glare, but some in situations (or for some individual preferences), a theme with
-  a light background and dark text is better. For example, we will probably want to switch to
-  the Light Theme when taking screenshots that will be printed on paper, or when projecting
-  a Doctor profile in a well-lit room where the dark theme is hard to read.</li>
+<li><img src="../../../assets/images/doctor-docs-04-D.png" alt="Eye icon" style="vertical-align: bottom;" /> <strong>Light
+  Theme / Dark Theme.</strong>
+  默认情况下，Doctor 使用深色背景和浅色文本的主题。
+  这有利于减少眩光，但在某些情况下(或某些个人喜好)，一个主题与
+  浅色背景和深色文字效果更好。
+  例如，我们可能想要切换到光主题，当截图将打印在纸上，或当投影医生的个人资料在一个光线充足的房间，黑暗的主题很难阅读。</li>
 </ul>
 <p><img alt="Doctor profile in Light Theme" src="../04-F.png" /></p>
-<h2 id="graphs">Graphs<a class="headerlink" href="#graphs" title="Permanent link">&para;</a></h2>
-<p>These plot various variables used in Doctor's analysis over time, from the start time of the profile
-(left end of the X-axis) to the finish time (right end of the X-axis).</p>
-<p>All graphs use the same X-axis. We will see that hovering over one shows the values at the same
-point in time on all the other graphs.</p>
+<h2 id="_4">图表<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>这些图绘制了从概要文件的开始时间(x 轴的左端)到结束时间(x 轴的右端)在一段时间内医生分析中使用的各种变量。</p>
+<p>所有图形都使用相同的 x 轴。我们将看到，将鼠标悬停在其中一个图形上，会显示所有其他图形在同一时间点的值。</p>
 <p><img alt="Doctor graphs with tooltips" src="../04-G.png" /></p>
 <h4 id="cpu-usage">CPU Usage %<a class="headerlink" href="#cpu-usage" title="Permanent link">&para;</a></h4>
-<p>This graph shows what percentage of the machine's available CPU capacity was being used by the
-Node.js process being profiled at any one point in time.</p>
+<p>该图显示了在任意一个时间点，Node.js 进程正在使用的机器可用 CPU 容量的百分比。</p>
 <p><img alt="CPU Usage graph" src="../04-H.png" /></p>
-<p><em>CPU Usage can exceed 100%</em> if the machine has multiple cores. 100% on this graph means
-100% of the capacity of a single core.</p>
-<p>Spikes in this graph indicate high CPU activity. This can be a problem if it is excessive and
-correlates with event loop blockage (see below), but rapid spikes can be a sign that the server
-is healthily processing high load quickly. Too little CPU activity can be a sign that the Node.js
-process is stuck waiting for an I/O operation to complete, like a slow database query or file write.</p>
-<p>In this profile, the processor is usually fairly busy, which looks healthy.</p>
-<p>In part 6 of this walkthrough, <a href="/documentation/doctor/06-fixing-io-problem/">Fixing an I/O problem</a>,
-we will see an example of an unhealthy CPU Usage graph.</p>
+<p><em>CPU Usage can exceed 100%</em> 如果机器有多个内核。在此图中，100%表示单核容量的 100%。</p>
+<p>此图中的峰值表示高 CPU 活动。
+如果峰值过大并且与事件循环阻塞相关(见下文)，这可能是一个问题，但快速峰值可能表明服务器正在健康地快速处理高负载。
+CPU 活动过少可能是 Node.js 进程在等待 I/O 操作完成时卡住的信号，比如缓慢的数据库查询或文件写入。</p>
+<p>在此数据图表中，处理器通常相当繁忙，看起来很健康。</p>
+<p>在本演练的第 6 部分，<a href="/documentation/doctor/06-fixing-io-problem/">修复 I/O 问题</a>，
+我们将看到一个不健康 CPU 使用图的示例。</p>
 <h4 id="memory-usage-mb">Memory Usage MB<a class="headerlink" href="#memory-usage-mb" title="Permanent link">&para;</a></h4>
-<p>This graph has three lines, showing megabytes of memory at each point in time, all on the same
-scale.</p>
+<p>该图有三条线，显示每个时间点的兆字节内存，所有这些都是相同的比例。</p>
 <p><img alt="Memory Usage graph" src="../04-I.png" /></p>
-<p>The three lines are:</p>
+<p>这三行是:</p>
 <ul>
-<li><strong>RSS (Resident Set Size)</strong>: This will always be the highest value, representing all memory
-  allocated as part of the execution of this process. The gap between this line and the Total Heap
-  Allocated line represents non-heap memory, such as storing of the JS code itself, the "stack"
-  which contains variable pointers and primitives like boolean and integer states, and a memory pool
-  for <a href="https://nodejs.org/api/buffer.html">Buffer</a> contents.</li>
-<li><strong>THA (Total Heap Allocated)</strong>: This is the amount of space that has been set aside for storing
-  items that have a reference, such as strings, objects and function closures. Unlike the stack,
-  where the reference pointers to these items are stored, a pre-set amount of memory is assigned
-  for the heap, before it is needed.</li>
-<li><strong>HU (Heap Used)</strong>: This is how much heap memory is actually being used at this point. It
-  represents the total size of all strings, objects, closures etc that have been allocated but
-  not garbage collected at a given point in time. <strong>This is usually the most interesting line</strong>,
-  with RSS and Total Heap Allocated providing context.</li>
+<li><strong>RSS (Resident Set Size)</strong>:
+  这将始终是最大值，表示作为该进程执行的一部分分配的所有内存。
+  这一行和 Total Heap Allocated 一行之间的间隙表示非堆内存，
+  例如 JS 代码本身的存储，包含变量指针和像布尔和整数状态这样的原语的“堆栈”，
+  以及<a href="https://nodejs.org/api/buffer.html">Buffer</a>内容的内存池。</li>
+<li><strong>THA (Total Heap Allocated)</strong>:
+  这是为存储具有引用的项(如字符串、对象和函数闭包)而预留的空间量。
+  与存储这些项的引用指针的堆栈不同，在需要堆之前，已经为堆分配了预先设定的内存量。</li>
+<li><strong>HU (Heap Used)</strong>:
+  这是此时实际使用的堆内存量。
+  它表示在给定时间点已分配但未被垃圾收集的所有字符串、对象、闭包等的总大小。
+  <strong>这通常是最有趣的一行</strong>，RSS 和 Total Heap assigned 提供上下文。</li>
 </ul>
-<p>A constantly increasing Heap Used line suggests a possible memory leak, where references to
-something are remaining in-scope, meaning it can't ever be garbage collected and therefore
-causing available memory to eventually run dry. The opposite is perhaps a more common problem:
-many sharp drops, correlating with high readings in the Event Loop Delay graph, suggests that
-disruptive garbage collection events are disrupting the process and blocking
-Node.js from executing code.</p>
-<p>In this profile, the heap goes up and down fairly gradually, there is always plenty of spare
-heap allocation, and there is plenty of non-heap memory in the Resident Set as well. This looks healthy.</p>
-<p>If we encounter an unhealthy Memory graph, the specific line indicating a problem will be marked
-in red:</p>
-<p><img alt="Doctor profile showing a memory problem" src="../04-Q.png" /></p>
+<p>不断增加的 Heap Used 行表明可能存在内存泄漏，对某些东西的引用仍然在作用域中，这意味着它永远无法被垃圾收集，因此导致可用内存最终枯竭。
+相反的可能是一个更常见的问题:许多急剧下降，与事件循环延迟图中的高读数相关，表明破坏性垃圾收集事件正在中断进程并阻止 Node.js 执行代码。</p>
+<p>在这个数据图表中，堆的上升和下降相当缓慢，总是有大量的空闲空间
+在常驻集中也有大量的非堆内存。这看起来很健康。</p>
+<p>如果我们遇到不健康的内存图，指示问题的特定线将被标记为红色:</p>
+<p><img alt="医生档案显示他有记忆问题" src="../04-Q.png" /></p>
 <h4 id="event-loop-delay-ms">Event Loop Delay ms<a class="headerlink" href="#event-loop-delay-ms" title="Permanent link">&para;</a></h4>
-<p>This represents points in time in which Node.js was blocked by executing synchronous
-JavaScript code.</p>
+<p>这表示 Node.js 被执行同步 JavaScript 代码阻塞的时间点。</p>
 <p><img alt="Event Loop Delay graph" src="../04-J.png" /></p>
-<p>It is important that we understand how this graph works, because it
-also gives us information about the acuity of the other graphs:</p>
+<p>理解这张图的工作原理很重要，因为它也给了我们关于其他图的清晰度的信息:</p>
 <ul>
-<li>The Y-axis represents the duration of the event loop delay that ended at the moment in
-  time indicated by the tooltip arrow</li>
-<li>This is then always followed by a horizontal line representing the same amount of time on
-  the X-axis. For the length of this line, <strong>Node.js was blocked</strong>, therefore, we don't have
-  any data on <em>any</em> graphs. If we run the cursor along a graph containing
-  substantial event loop delay, the tooltip jumps - this is because no data could be
-  collected between the jumps, for any graphs, because Node.js was stuck executing some
-  slow synchronous code.</li>
+<li>y 轴表示在工具提示箭头指示的时刻结束的事件循环延迟的持续时间</li>
+<li>之后总是有一条水平线表示 x 轴上相同的时间量。
+  对于这条线的长度，<strong>Node.js 被阻塞</strong>，因此，我们在任何图形上都没有 <em>任何</em> 数据。
+  如果我们沿着包含大量事件循环延迟的图形运行游标，工具提示会跳转—这是因为对于任何图形，
+  在跳转之间都无法收集到数据，因为 Node.js 在执行一些缓慢的同步代码时卡住了。</li>
 </ul>
-<p>For example, in the below screenshot, we can see:</p>
+<p>例如，在下面的截图中，我们可以看到:</p>
 <ul>
-<li>That this is the (joint) longest event loop delay seen in this profile, because it is the
-  highest point on the Y-axis.</li>
-<li>That this delay took up a noticable chunk of the duration of the profile, by looking at the
-  horizontal line between this tooltip and the previous one.</li>
+<li>这是(联合)最长的事件循环延迟，因为它是 y 轴上的最高点。</li>
+<li>通过查看这个工具提示和前一个工具提示之间的水平线，这个延迟占用了概要文件持续时间的一个显著块。</li>
 </ul>
-<p>Moving the cursor along, we can see that four event loop delays account for most of the
-run time. We can also see that this is causing the other data to be very course - after
-the first quarter of a second or so, there are noticable jumps between each reading for
-memory, CPU, etc, because Node.js was too busy executing some slow synchronous code to
-even take another reading.</p>
-<p>This is clearly not healthy - and Doctor has flagged it as such, colouring this graph
-red and pointing to it in the Alert box.</p>
+<p>沿着光标移动，我们可以看到四个事件循环延迟占据了大部分运行时间。
+我们还可以看到，这导致其他数据变得非常缓慢——大约在第一季度之后，每次读取内存、CPU 等之间都有明显的跳跃，因为 Node.js 忙于执行一些缓慢的同步代码，甚至没有时间进行另一次读取。</p>
+<p>这显然是不健康的——医生已经将其标记为健康的，将此图表涂成红色，并在警告框中指出它。</p>
 <h4 id="active-handles">Active Handles<a class="headerlink" href="#active-handles" title="Permanent link">&para;</a></h4>
-<p>This graph shows the quantity of I/O handles presently active, awaiting an output.</p>
+<p>该图显示了当前活动的、等待输出的 I/O 句柄的数量。</p>
 <p><img alt="Active Handles graph" src="../04-K.png" /></p>
-<p>When Node.js delegates asychronously, such as using <a href="https://libuv.org/">libuv</a> to delegate
-a task like a file write or a database query the operating system, it stores a "handle". An
-"active handle" is a delegated task that has not reported as being complete.</p>
-<p>The Active Handles graph therefore gives us an idea of how much asychronous I/O activity
-the Node.js process is waiting on at any point in time. This should ideally follow an
-orderly pattern, rising and falling as requests are handled and completed. It can also
-offer clues when combined with the other graphs - for example, CPU spikes on a server
-that correlate with increased active handles should usually also correlate with
-incoming requests.</p>
-<p>This graph generally provides context for the other graphs. It's hard to say generically
-what an Active Handles graph "should" look like: we generally can't point to an Active
-Handles graph and say "That looks unhealthy" without knowing the application logic.</p>
-<p>Here, we have a period with very few active handles, and very little other activity, which
-presumably represents the process getting ready. There is then a steady period of [103]
-active handles, which presumably represents incoming requests being dealt with. It tells
-us we can probably ignore that early period with very few active handles as not
-representing typical server activity.</p>
-<h2 id="recommendations-panel">Recommendations Panel<a class="headerlink" href="#recommendations-panel" title="Permanent link">&para;</a></h2>
-<p>Click on the blue bar at the bottom, and it will open a panel telling us more about Doctor's
-conclusions about what is happening with this application.</p>
+<p>当 Node.js 异步委托时，例如使用<a href="https://libuv.org/">libuv</a>将文件写入或数据库查询等任务委托给操作系统，它会存储一个“句柄”。
+"active handle"是未报告为完成的委托任务。</p>
+<p>因此，活动句柄图可以让我们了解 Node.js 进程在任何时间点等待了多少异步 I/O 活动。
+理想情况下，这应该遵循一个有序的模式，随着请求的处理和完成而上升和下降。
+当与其他图形结合使用时，它还可以提供线索——例如，服务器上与活动句柄增加相关的 CPU 峰值通常也应该与传入请求相关。</p>
+<p>这个图通常为其他图提供上下文。
+很难概括地说活动句柄图“应该”是什么样子:在不知道应用程序逻辑的情况下，我们通常不能指着活动句柄图说“看起来不健康”。</p>
+<p>在这里，我们有一个活动句柄很少的时间段，其他活动也很少，这可能表示进程准备就绪。
+然后有一段稳定的[103]个活动句柄，这可能代表正在处理的传入请求。
+它告诉我们，我们可以忽略很少活动句柄的早期阶段，因为它不代表典型的服务器活动。</p>
+<h2 id="_5">建议面板<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>点击底部的蓝色条，它将打开一个面板，告诉我们更多关于医生对这个应用程序的结论。</p>
 <p><img alt="Recommendations Panel - closed" src="../04-M.png" /></p>
-<p>This is in two parts: a Recommendations Summary, and a Recommendation in Detail article
-below a 'Read more' button.</p>
-<h4 id="recommendations-summary">Recommendations Summary<a class="headerlink" href="#recommendations-summary" title="Permanent link">&para;</a></h4>
-<p>This gives a simple bullet point overview of the identified problem, typically with a
-suggested next step.</p>
-<p><img alt="Recommendations Panel - open, not expanded" src="../04-N.png" /></p>
-<p>There are a few UI controls:</p>
+<p>这篇文章分为两部分:推荐摘要和“阅读更多”按钮下方的详细推荐文章。</p>
+<h4 id="_6">建议总结<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>这将对已识别的问题给出一个简单的要点概述，通常还会给出下一步的建议。</p>
+<p><img alt="建议面板-打开，未展开" src="../04-N.png" /></p>
+<p>这里有一些 UI 控件:</p>
 <ul>
-<li>The 'x' closes the panel</li>
-<li>"Browse undetected issues" allows us to read descriptions of issues that Doctor can
-  identify but hasn't identified for this profile. Clicking on this expands out some tabs
-  to show descriptions of problems that Doctor has not identified for this profile. For example,
-  We might find this useful, for example:</li>
-<li>While learning about Node.js performance, to avoid creating new problems while fixing
-    an existing problem.</li>
-<li>To understand why Doctor might not have identified a known problem. As discussed in
-    the <a href="#alert-bar">Alert Bar section</a>, Doctor generally does not diagnose more than one problem at a time.</li>
-</ul>
-<p><img alt="Recommendations Panel - browse undetected open" src="../04-O.png" /></p>
-<p>In this case, it tells us that "There may be one or more long running synchronous operations
-blocking the thread", and recommends using <code>clinic flame</code> to narrow down.</p>
-<p>After reading the summary, we recommend clicking "Read more" to understand the problem
-in more depth.</p>
-<h4 id="recommendation-in-detail">Recommendation in Detail<a class="headerlink" href="#recommendation-in-detail" title="Permanent link">&para;</a></h4>
-<p>Clicking 'Read more' expands the Recommendations Panel to show a detailed article on the
-performance problem that has been diagnosed. These usually have three sections (clicking
-on the contents list on the left allows us to skip to a particular section):</p>
+<li><code>x</code> 关闭面板</li>
+<li>
+<p><code>Browse undetected issues</code>允许我们阅读医生可以识别但尚未识别此数据图表的问题的描述。
+  单击此选项卡将展开一些选项卡，以显示 Doctor 尚未为该数据图表识别的问题的描述。
+  我们可能会发现这个很有用，例如:</p>
 <ul>
-<li><strong>Understanding the analysis</strong> describes the problem in depth.</li>
-<li><strong>Next Steps</strong> details some recommended steps to narrow down on the exact cause of
-  the problem, so we can fix it. Usually this involves using another tool in the Clinic.js
-  suite which can identify individual lines of problematic code.</li>
-<li><strong>Reference</strong> gives links for suggested further reading and credits any sources that
-  were quoted or used in writing this recommendation.</li>
+<li>在学习 Node.js 性能的同时，避免在修复现有问题的同时产生新的问题。</li>
+<li>为了理解为什么医生没有发现已知的问题。
+    正如在<a href="#alert-bar">Alert Bar section</a>中所讨论的，医生通常不会同时诊断多个问题。</li>
 </ul>
-<p><img alt="Recommendations Panel - open, expanded" src="../04-P.png" /></p>
-<p>Then we're ready to look at fixing the problem.</p>
+</li>
+</ul>
+<p><img alt="建议面板-浏览未检测打开" src="../04-O.png" /></p>
+<p>在这种情况下，它告诉我们“可能有一个或多个长时间运行的同步操作阻塞线程”，并建议使用“临床火焰”来缩小范围。</p>
+<p>在阅读了总结后，我们建议点击<code>Read more</code>来更深入地了解问题。</p>
+<h4 id="_7">详细建议<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>单击<code>Read more</code>将展开建议面板，以显示关于已诊断的性能问题的详细文章。
+这些通常有三个部分(点击左边的内容列表可以跳转到一个特定的部分):</p>
+<ul>
+<li><strong>Understanding the analysis</strong> 深入地描述了问题。</li>
+<li><strong>Next Steps</strong> 详细介绍了一些建议的步骤，以缩小问题的确切原因，以便我们可以解决它。
+  通常，这涉及到使用 Clinic.js 套件中的另一个工具，该工具可以识别有问题的代码的单个行。</li>
+<li><strong>Reference</strong> 提供了建议进一步阅读的链接，并在撰写本建议时引用或使用了任何来源。</li>
+</ul>
+<p><img alt="建议面板-打开，展开" src="../04-P.png" /></p>
+<p>然后我们就可以着手解决这个问题了。</p>
 <hr />
-<h5 id="up-next">Up next<a class="headerlink" href="#up-next" title="Permanent link">&para;</a></h5>
-<p><a href="/documentation/doctor/05-fixing-event-loop-problem">Fixing an event loop problem</a></p>
+<h2 id="_8">下一个<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p><a href="/documentation/doctor/05-fixing-event-loop-problem">修复事件循环问题</a></p>
 
 
 
@@ -1592,50 +1652,14 @@ on the contents list on the left allows us to skip to a particular section):</p>
           
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             回到页面顶部
-          </a>
+          </button>
         
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="页脚" >
-      
-        
-        <a href="../03-first-analysis/" class="md-footer__link md-footer__link--prev" aria-label="上一页: First analysis" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              First analysis
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../05-fixing-event-loop-problem/" class="md-footer__link md-footer__link--next" aria-label="下一页: Fixing an event loop problem" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              Fixing an event loop problem
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1657,32 +1681,44 @@ on the contents list on the left allows us to skip to a particular section):</p>
   
     
     
+    
+    
     <a href="https://twitter.com/sindresorhus" target="_blank" rel="noopener" title="Sindre Sorhus Twitter" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
     </a>
   
+    
+    
     
     
     <a href="https://github.com/sindresorhus" target="_blank" rel="noopener" title="Sindre Sorhus Github" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
     </a>
   
+    
+    
     
     
     <a href="https://instagram.com/sindresorhus" target="_blank" rel="noopener" title="Sindre Sorhus Instagram" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
     </a>
   
+    
+    
     
     
     <a href="https://sindresorhus.com/apps" target="_blank" rel="noopener" title="Sindre Sorhus Blog" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M162.4 196c4.8-4.9 6.2-5.1 36.4-5.1 27.2 0 28.1.1 32.1 2.1 5.8 2.9 8.3 7 8.3 13.6 0 5.9-2.4 10-7.6 13.4-2.8 1.8-4.5 1.9-31.1 2.1-16.4.1-29.5-.2-31.5-.8-10.3-2.9-14.1-17.7-6.6-25.3zm61.4 94.5c-53.9 0-55.8.2-60.2 4.1-3.5 3.1-5.7 9.4-5.1 13.9.7 4.7 4.8 10.1 9.2 12 2.2 1 14.1 1.7 56.3 1.2l47.9-.6 9.2-1.5c9-5.1 10.5-17.4 3.1-24.4-5.3-4.7-5-4.7-60.4-4.7zm223.4 130.1c-3.5 28.4-23 50.4-51.1 57.5-7.2 1.8-9.7 1.9-172.9 1.8-157.8 0-165.9-.1-172-1.8-8.4-2.2-15.6-5.5-22.3-10-5.6-3.8-13.9-11.8-17-16.4-3.8-5.6-8.2-15.3-10-22C.1 423 0 420.3 0 256.3 0 93.2 0 89.7 1.8 82.6 8.1 57.9 27.7 39 53 33.4c7.3-1.6 332.1-1.9 340-.3 21.2 4.3 37.9 17.1 47.6 36.4 7.7 15.3 7-1.5 7.3 180.6.2 115.8 0 164.5-.7 170.5zm-85.4-185.2c-1.1-5-4.2-9.6-7.7-11.5-1.1-.6-8-1.3-15.5-1.7-12.4-.6-13.8-.8-17.8-3.1-6.2-3.6-7.9-7.6-8-18.3 0-20.4-8.5-39.4-25.3-56.5-12-12.2-25.3-20.5-40.6-25.1-3.6-1.1-11.8-1.5-39.2-1.8-42.9-.5-52.5.4-67.1 6.2-27 10.7-46.3 33.4-53.4 62.4-1.3 5.4-1.6 14.2-1.9 64.3-.4 62.8 0 72.1 4 84.5 9.7 30.7 37.1 53.4 64.6 58.4 9.2 1.7 122.2 2.1 133.7.5 20.1-2.7 35.9-10.8 50.7-25.9 10.7-10.9 17.4-22.8 21.8-38.5 3.2-10.9 2.9-88.4 1.7-93.9z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M162.4 196c4.8-4.9 6.2-5.1 36.4-5.1 27.2 0 28.1.1 32.1 2.1 5.8 2.9 8.3 7 8.3 13.6 0 5.9-2.4 10-7.6 13.4-2.8 1.8-4.5 1.9-31.1 2.1-16.4.1-29.5-.2-31.5-.8-10.3-2.9-14.1-17.7-6.6-25.3zm61.4 94.5c-53.9 0-55.8.2-60.2 4.1-3.5 3.1-5.7 9.4-5.1 13.9.7 4.7 4.8 10.1 9.2 12 2.2 1 14.1 1.7 56.3 1.2l47.9-.6 9.2-1.5c9-5.1 10.5-17.4 3.1-24.4-5.3-4.7-5-4.7-60.4-4.7zm223.4 130.1c-3.5 28.4-23 50.4-51.1 57.5-7.2 1.8-9.7 1.9-172.9 1.8-157.8 0-165.9-.1-172-1.8-8.4-2.2-15.6-5.5-22.3-10-5.6-3.8-13.9-11.8-17-16.4-3.8-5.6-8.2-15.3-10-22C.1 423 0 420.3 0 256.3 0 93.2 0 89.7 1.8 82.6 8.1 57.9 27.7 39 53 33.4c7.3-1.6 332.1-1.9 340-.3 21.2 4.3 37.9 17.1 47.6 36.4 7.7 15.3 7-1.5 7.3 180.6.2 115.8 0 164.5-.7 170.5zm-85.4-185.2c-1.1-5-4.2-9.6-7.7-11.5-1.1-.6-8-1.3-15.5-1.7-12.4-.6-13.8-.8-17.8-3.1-6.2-3.6-7.9-7.6-8-18.3 0-20.4-8.5-39.4-25.3-56.5-12-12.2-25.3-20.5-40.6-25.1-3.6-1.1-11.8-1.5-39.2-1.8-42.9-.5-52.5.4-67.1 6.2-27 10.7-46.3 33.4-53.4 62.4-1.3 5.4-1.6 14.2-1.9 64.3-.4 62.8 0 72.1 4 84.5 9.7 30.7 37.1 53.4 64.6 58.4 9.2 1.7 122.2 2.1 133.7.5 20.1-2.7 35.9-10.8 50.7-25.9 10.7-10.9 17.4-22.8 21.8-38.5 3.2-10.9 2.9-88.4 1.7-93.9z"/></svg>
     </a>
   
     
     
-    <a href="https://mastodon.social/@sindresorhus" target="_blank" rel="noopener" title="Sindre Sorhus Mastodon" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+      
+    
+    
+    
+    <a href="https://mastodon.social/@sindresorhus" target="_blank" rel="noopener me" title="Sindre Sorhus Mastodon" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
     </a>
   
 </div>
@@ -1696,12 +1732,11 @@ on the contents list on the left allows us to skip to a particular section):</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "navigation.indexes", "content.code.annotate", "navigation.top"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "navigation.indexes", "content.code.annotate", "navigation.top"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
-    
     
   </body>
 </html>

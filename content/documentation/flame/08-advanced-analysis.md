@@ -1,5 +1,5 @@
 ---
-title: 'Advanced analysis'
+title: "先进的分析"
 priority: 8
 
 # SEO
@@ -10,132 +10,105 @@ metaData:
     - Documentation
 ---
 
-# Advanced analysis
+# 先进的分析
 
-We still have some hot blocks in our latest flamegraph:
+在我们最新的火焰图中，我们仍然有一些热块:
 
 ![Flamegraph from node-clinic-flame-demo/3-server-with-reduced-call-graph.js](07-A.png)
 
-None of the hottest blocks refer to any of our code,
-but let's take a minute to think through what's happening.
+最热门的块都没有引用我们的任何代码，但是让我们花一分钟思考一下发生了什么。
 
-The hottest is `clearBuffer` in `_stream_writable.js`.
-This is part of Node core. Since the goal here isn't to begin
-optimizing Node core, let's look at the next hottest block:
-`handleRequest`.
+最热的是`_stream_writable.js`中的' clearBuffer '。
+这是 Node 核心的一部分。
+由于这里的目标不是开始优化 Node 核心，让我们看看下一个最热门的块:' handleRequest '。
 
-We can expand the `handleRequest` block to look
-something like the following:
+我们可以将' handleRequest '块展开如下所示:
 
 ![Flamegraph expanding Fastify's handleRequest function](08-A.png)
 
-Looking at the three hottest functions in this sub-view:
+看看这个子视图中最热门的三个函数:
 
-1. Node.js's `clearBuffer` is first and accounts for most of the time spent
-   inside `onSendEnd`. As discussed, optimizing that will probably be difficult.
-2. Second hottest is the Fastify function `handleRequest`, which has many children
-   so is clearly quite complex.
-3. Third is in our own `payload` function - but we've already optimized that.
+1. Node.js 的' clearBuffer '是第一个，占了' onSendEnd '内部花费的大部分时间。如前所述，对其进行优化可能很困难。
+2. 第二热门的是 fasttify 函数' handleRequest '，它有许多子函数，因此显然非常复杂。
+3. 第三个是我们自己的“有效载荷”功能，但我们已经对其进行了优化。
 
-So, why are we spending a long time inside `handleRequest`? If we click copy path
-to look at the Fastify code, there's nothing obviously wrong, and we know
-Fastify is quite well optimized for performance.
+为什么我们要在 handleRequest 里面花很长时间?
+如果我们单击 copy path 查看 Fastify 代码，没有什么明显的错误，而且我们知道 Fastify 在性能方面进行了很好的优化。
 
-Maybe something is missing? Let's open the Options menu and tick the
-unticked "V8" button, showing operations inside the V8 JavaScript
-engine that are normally hidden:
+也许是少了什么?让我们打开 Options 菜单并勾选未勾选的“V8”按钮，显示 V8 JavaScript 引擎内部通常隐藏的操作:
 
 ![Flamegraph showing V8 functions in Fastify's handleRequest](08-B.png)
 
-The gap almost completely disappears, and a new block appears (selected in the
-above screenshot), starting `T v8::internal::Builtin_JsonStringify`. This means
-it refers to a C++ function inside V8, named `Builtin_JsonStringify`. Clearly,
-this is related to `JSON.stringify()`.
+间隙几乎完全消失，出现一个新的块(在上面的截图中选择)，开始' T v8::internal::Builtin_JsonStringify '。
+这意味着它指的是 V8 内部的一个 c++函数，名为“Builtin_JsonStringify”。显然，这与' JSON.stringify() '有关。
 
-It's worth knowing that the JavaScript wrappers `JSON.stringify()` and
-`JSON.parse()` that we are familiar with are not sampled directly by V8, which
-instead skips straight to the underlying C++ implementation.
+值得知道的是，我们熟悉的 JavaScript 包装器' JSON.stringify() '和' JSON.parse() '并没有被 V8 直接采样，而是直接跳过底层的 c++实现。
 
-Expand that, and we see V8 needs to do many, many steps when trying to
-stringify some JSON.
+展开它，我们看到 V8 在尝试字符串化 JSON 时需要做很多很多的步骤。
 
 ![Flamegraph expanded on V8's Builtin_JsonStringify](08-C.png)
 
-This is a case where instead of focussing on one "hot" function, we need to focus
-on an inefficient parent function that is calling many micro-tasks. Each one looks
-pretty fast - the problem is, they add up to a lot of time.
+在这种情况下，我们需要关注调用许多微任务的低效父函数，而不是关注一个“热门”函数。
+每一个看起来都很快——问题是，它们加起来要花很多时间。
 
-Why is JSON stringification happening here? It's because we send an object, and both
-Express and Fastify will automatically serialize an object passed to their `send` method.
+为什么这里会出现 JSON 字符串化?这是因为我们发送一个对象，Express 和 fasttify 都会自动序列化传递给它们的 send 方法的对象。
 
-This bottleneck becomes a lot clearer when we turn off inlining.
+当我们关闭内联时，这个瓶颈变得更加清晰。
 
-Let's run the following command:
+让我们运行以下命令:
 
 ```bash
  clinic flame --on-port 'autocannon localhost:$PORT' -- node --no-turbo-inlining 3-server-with-reduced-call-graph.js
 ```
 
-This will produce a flamegraph similar to the following:
+这将产生类似以下的火焰图:
 
 ![Flamegraph of Fastify demo without inlining](08-D.png)
 
-We have a new second-hottest function (after the Node core one) - `serialize`.
-This was previously hidden due to being inlined by V8.
+我们有了一个新的第二热门的函数(仅次于 Node 的核心函数)——“serialize”。
+由于被 V8 内联，这在之前是隐藏的。
 
-With none of the functions inlining, it becomes a lot more apparent that
-the `serialize` function is a bottleneck. Whereas _with_ inlining the hot
-blocks were seen more on the top of the stack _because_ they represent
-several other functions that have also been inlined into them.
+由于这些函数都没有内联，因此“序列化”函数成为瓶颈的情况变得更加明显。
+然而，内联热块更多地出现在堆栈的顶部，因为它们代表了其他几个也被内联到它们中的函数。
 
-The `4-server-with-manual-serialization.js` alters the line 23 in the `payload`
-function from `return {date, id}` to:
+' 4-server-with-manual- serialize .js '将' payload '函数中的第 23 行从' return {date, id} '更改为:
 
 ```js
-return `{"date": ${date}, "id": "${id}"}`
+return `{"date": ${date}, "id": "${id}"}`;
 ```
 
-It should be noted here that this technique may be inappropriate in many cases,
-for instance where escaping inputs is crucial to security. An alternative to
-manual serialization which is still faster than using `JSON.stringify` is
-schema-based serialization using [fast-json-stringify](http://npm.im/fast-json-stringify). The Fastify web framework also supports schema-based serialization by default,
-see [Fastify's Serialization
-Documentation](https://github.com/fastify/fastify/blob/master/docs/Validation-and-Serialization.md#serialization).
+这里应该指出，这种技术在许多情况下可能是不合适的，例如，在转义输入对安全性至关重要的情况下。
+手动序列化的另一种选择仍然比使用' JSON.stringify '更快，那就是使用[fast-json-stringify](http://npm.im/fast-json-stringify)进行基于模式的序列化。
+Fastify web 框架也默认支持基于模式的序列化，参见[Fastify 的序列化文档](https://github.com/fastify/fastify/blob/master/docs/Validation-and-Serialization.md#serialization)。
 
-Let's run Clinic.js Flame to create a flamegraph for `4-server-with-manual-serialization.js`:
+让我们运行 Clinic.js Flame 为' 4-server-with-manual-serialization.js '创建一个火焰图:
 
 ```bash
 clinic flame --on-port 'autocannon localhost:$PORT' -- node 4-server-with-manual-serialization.js
 ```
 
-This should give something like:
+这应该给出如下结果:
 
 ![Flamegraph of Fastify demo with manual inlining](08-E.png)
 
-We can see the the hottest block is a Node core function, `Socket._writeGeneric`,
-which is called by `clearBuffer`. It's same Node core bottleneck as before, it's just that
-in this sampling period the V8 engine _didn't_ inline `Socket._writeGeneric` into
-`clearBuffer`.
+我们可以看到最热的块是一个 Node 核心函数，' Socket.\_writeGeneric '，它被' clearBuffer '调用。
+这和以前一样是 Node 核心瓶颈，只是在这个采样期间 V8 引擎没有内联 Socket。\_writeGeneric '转换为' clearBuffer '。
 
-Let's use `autocannon` to determine the effect this has had on server performance:
+让我们使用“autocannon”来确定这对服务器性能的影响:
 
 ![Output from autocannon before and after using manual serialization](08-F.png)
 
-We've achieved roughly another 10% improvement.
+我们又实现了大约 10%的改进。
 
-At this point further optimization of the application becomes increasingly challenging,
-since functions in Node core have become the primary bottleneck. A few more percent could
-be squeezed out here and there, especially if we were willing to change the constraints
-of the `id` field.
+此时，应用程序的进一步优化变得越来越具有挑战性，因为 Node 核心中的功能已经成为主要瓶颈。
+如果我们愿意改变“id”字段的约束条件，那么还可以在这里或那里挤出更多的百分比。
 
-However, for the most part, our work here is done.
+不过，我们在这里的大部分工作已经完成了。
 
 ---
 
-##### Up next
+## 下一个
 
-**The walkthrough is complete.** Congratulations! You should now be able to use
-Clinic.js Flame to solve common performance problems.
+**演练已经完成。** 恭喜你!现在你应该可以使用 Clinic.js Flame 来解决常见的性能问题了。
 
-You may also choose to continue to read about Flame's
-more [advanced controls](/documentation/flame/09-advanced-controls/).
+您也可以选择继续阅读有关 Flame 的更多[高级控制](/documentation/flame/09-advanced-controls/).
